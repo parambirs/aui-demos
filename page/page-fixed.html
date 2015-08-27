@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+      <title>AUI - Fixed Page</title>
+      <link rel="stylesheet" href="../aui/css/aui.css" media="all">
+      <link rel="stylesheet" href="../aui/css/aui-experimental.css" media="all">
+      <script src="../js/jquery-1.11.3.js"></script>
+      <script src="../js/require.js"></script>
+      <script src="../aui/js/aui.js"></script>
+      <script src="../aui/js/aui-experimental.js"></script>
+    </head>
+    <body class="aui-page-fixed">
+    <div id="page">
+      <header id="header" role="banner">
+        <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+          <div class="aui-header-inner">
+            <div class="aui-header-primary">
+              <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
+                <a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a>
+              </h1>
+              <ul class="aui-nav">
+                <li><a href="http://example.com/">Nav 1</a></li>
+                <li><a href="http://example.com/">Nav 2</a></li>
+              </ul>
+            </div>
+            <div class="aui-header-secondary">
+              <ul class="aui-nav">
+                <li><a href="http://example.com/">Nav (s) 1</a></li>
+                <li><a href="http://example.com/">Nav (s) 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section id="content" role="main">
+        <header class="aui-page-header">
+          <div class="aui-page-header-inner">
+            <div class="aui-page-header-main">
+              <h1>Fixed Page Layout</h1>
+            </div>
+          </div>
+        </header>
+        <nav class="aui-navgroup aui-navgroup-horizontal">
+          <div class="aui-navgroup-inner">
+            <div class="aui-navgroup-primary">
+              <ul class="aui-nav">
+                <li><a href="http://example.com"/>Primary Nav item 1</a></li>
+                <li><a href="http://example.com"/>Primary Nav item 2</a></li>
+                <li><a href="http://example.com"/>Primary Nav item 3</a></li>
+              </ul>
+            </div>
+            <div class="aui-navgroup-secondary">
+              <ul class="aui-nav">
+                <li><a href="http://example.com/">Secondary Nav item 1</a></li>
+                <li><a href="http://example.com/">Secondary Nav item 1</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div class="aui-page-panel">
+          <div class="aui-page-panel-inner">
+            <section class="aui-page-panel-content">
+              <h2>Summary</h2>
+              <p>
+                Common markup to produce an Atlassian standard page layout and base design.
+              </p>
+              <p>
+                This is an "outside-in" type of component aiming to provide a standardised page, intended for use with the full set of application header, navigation, page header, footer, etc. The content area has a preset layout system for common layout variations. There are several overall page layout options (full width, fixed width, etc).
+              </p>
+
+              <h3>Fixed width</h3>
+              <p>The fixed width page layout deliberately constrains the overall width of the content and horizontally centers it on the page. This gives the designer more control and can be useful for when a more predictable layout with easy to read line lengths are needed. Conversely, it constrains the amount of space available to content and takes away control over presentation from the user.</p>
+            </section>
+          </div>
+        </div>
+      </section>
+      <footer id="footer" role="contentinfo">
+        <section class="footer-body">
+          <ul>
+            <li>I ♥ AUI</li>
+          </ul>
+          <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
+        </section>
+      </footer>
+    </div>
+    </body>
+</html>
