@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+      <title>AUI - Select 2</title>
+      <link rel="stylesheet" href="../aui/css/aui.css" media="all">
+      <link rel="stylesheet" href="../aui/css/aui-experimental.css" media="all">
+      <script src="../js/jquery-1.11.3.js"></script>
+      <script src="../js/require.js"></script>
+      <script src="../aui/js/aui.js"></script>
+      <script src="../aui/js/aui-experimental.js"></script>
+    </head>
+    <body class="aui-page-fixed">
+    <div id="page">
+      <header id="header" role="banner">
+        <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+          <div class="aui-header-inner">
+            <div class="aui-header-primary">
+              <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
+                <a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a>
+              </h1>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <section id="content" role="main">
+        <header class="aui-page-header">
+          <div class="aui-page-header-inner">
+            <div class="aui-page-header-main">
+              <h1>AUI Select2</h1>
+            </div>
+          </div>
+        </header>
+        <div class="aui-page-panel">
+          <div class="aui-page-panel-inner">
+            <section class="aui-page-panel-content">
+              <h2>Summary</h2>
+              <p>
+                Select2 is a third party replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results. AUI provides a visual wrapper around Select2 to style it according to the Atlassian Design Guidelines (ADG).
+              </p>
+
+              <h3>Example</h3>
+              <form class="aui">
+                <select name="select2-example" id="select2-example" multiple="multiple">
+                  <option value="CONF">Confluence</option>
+                  <option value="JIRA">JIRA</option>
+                  <option value="BAM">Bamboo</option>
+                  <option value="JAG">JIRA Agile</option>
+                  <option value="CAP">JIRA Capture</option>
+                  <option value="AUI">AUI</option>
+                </select>
+                <br/>
+                <button class="aui-button" id="btnShowSelected" type="button">Show selected</button>
+              </form>
+            </section>
+          </div>
+        </div>
+      </section>
+      <footer id="footer" role="contentinfo">
+        <section class="footer-body">
+          <ul>
+            <li>I ♥ AUI</li>
+          </ul>
+          <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
+        </section>
+      </footer>
+    </div>
+    <script type="text/javascript">
+      $( document ).ready( function() {
+        AJS.$("#select2-example").auiSelect2();
+
+        $("#select2-example").on("change", function (e) { console.log($('#select2-example').val()); });
+
+        $("#btnShowSelected").click( function() {
+          alert($('#select2-example').val());
+        }); 
+      });
+    </script>
+    </body>
+</html>
