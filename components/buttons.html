@@ -4,12 +4,12 @@
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
       <title>AUI - Buttons</title>
-      <link rel="stylesheet" href="../aui/css/aui.css" media="all">
-      <link rel="stylesheet" href="../aui/css/aui-experimental.css" media="all">
-      <script src="../js/jquery-1.11.3.js"></script>
+      <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui.css" media="all">
+      <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui-experimental.css" media="all">
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
       <script src="../js/require.js"></script>
-      <script src="../aui/js/aui.js"></script>
-      <script src="../aui/js/aui-experimental.js"></script>
+      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui.js"></script>
+      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui-experimental.js"></script>
     </head>
     <body class="aui-page-fixed">
     <div id="page">
@@ -57,6 +57,13 @@
                 </ul>
               </div>
               </p>
+              <p><button class="aui-button"><span class="aui-icon aui-icon-small aui-iconfont-view"></span> Icon button</button></p>
+              <p><button class="aui-button" aria-disabled="true">Disabled button</button></p>
+              <p><button class="aui-button aui-button-subtle">
+                <span class="aui-icon aui-icon-small aui-iconfont-configure"></span> 
+                Subtle button
+                </button>
+              </p>
               <p>
                 <div name="split-button-demo" id="split-button-demo" class="aui-buttons">
                   <button class="aui-button aui-button-split-main">Split button</button>
@@ -72,12 +79,12 @@
                   </ul>
                 </div>
               </p>
-              <p><button class="aui-button"><span class="aui-icon aui-icon-small aui-iconfont-view"></span> Icon button</button></p>
-              <p><button class="aui-button" aria-disabled="true">Disabled button</button></p>
-              <p><button class="aui-button aui-button-subtle">
-                <span class="aui-icon aui-icon-small aui-iconfont-configure"></span> 
-                Subtle button
-                </button>
+              <p>
+                <div class="aui-buttons">
+                  <button class="aui-button">Button</button>
+                  <button class="aui-button">Button</button>
+                  <button class="aui-button">Button</button>
+                </div>
               </p>
             </section>
           </div>
@@ -92,16 +99,5 @@
         </section>
       </footer>
     </div>
-    <script type="text/javascript">
-      $( document ).ready( function() {
-        AJS.$("#select2-example").auiSelect2();
-
-        $("#select2-example").on("change", function (e) { console.log($('#select2-example').val()); });
-
-        $("#btnShowSelected").click( function() {
-          alert($('#select2-example').val());
-        }); 
-      });
-    </script>
     </body>
 </html>
