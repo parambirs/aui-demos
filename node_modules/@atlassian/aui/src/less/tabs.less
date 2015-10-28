@@ -1,0 +1,203 @@
+@import './imports/global';
+
+/*! AUI Tabs */
+
+aui-tabs {
+    display: block;
+}
+
+/* temp override */
+.aui-tabs {
+    font-size: 14px;
+    line-height: 1.46; /* 20px equiv line-height */
+}
+
+/* Functional style */
+.aui-tabs > .tabs-pane {
+    display: none;
+}
+.aui-tabs > .tabs-pane.active-pane {
+    display: block;
+}
+
+/* Common styles - Vertical and Horizontal */
+
+.aui-tabs > .tabs-menu > .menu-item > a,
+.aui-tabs > .tabs-menu > .menu-item > a strong {
+    background: transparent;
+    font-weight: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer; /* set explicitly to avoid ie bug */
+}
+
+.aui-tabs > .tabs-menu > .menu-item.active-tab > a,
+.aui-tabs > .tabs-menu > .menu-item.active-tab > a strong {
+    font-weight: bold;
+}
+
+.aui-tabs > .tabs-menu .menu-item a,
+.aui-tabs > .tabs-menu .menu-item a:link,
+.aui-tabs > .tabs-menu .menu-item a:visited {
+    background: @aui-tabs-tab-bg-color;
+    color: @aui-tabs-tab-text-color;
+}
+
+.aui-tabs > .tabs-menu .menu-item a:focus,
+.aui-tabs > .tabs-menu .menu-item a:hover {
+    background: @aui-tabs-tab-hover-bg-color;
+    color: @aui-tabs-tab-hover-text-color;
+}
+
+.aui-tabs > .tabs-menu .menu-item.active-tab a,
+.aui-tabs > .tabs-menu .menu-item.active-tab a:link,
+.aui-tabs > .tabs-menu .menu-item.active-tab a:visited,
+.aui-tabs > .tabs-menu .menu-item.active-tab a:focus,
+.aui-tabs > .tabs-menu .menu-item.active-tab a:hover,
+.aui-tabs > .tabs-menu .menu-item.active-tab a:active {
+    background: @aui-tabs-tab-active-bg-color;
+    color: @aui-tabs-tab-active-text-color;
+}
+
+
+/* Vertical Tabs - PDL colours but spacing still to be tweaked */
+.aui-tabs.vertical-tabs > .tabs-menu {
+    position: relative;
+    float: left;
+    width: 11em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.aui-tabs.vertical-tabs > .tabs-menu > .menu-item,
+.aui-tabs.vertical-tabs > .tabs-menu > .aui-responsive-tabs-trigger {
+    border: 1px solid @aui-tabs-tab-border-color;
+    border-right: none;
+    margin: -1px 0 0 0;
+}
+.aui-tabs.vertical-tabs > .tabs-menu > .menu-item:first-child {
+    margin-top: 1em;
+}
+.aui-tabs.vertical-tabs > .tabs-menu > .menu-item.active-tab {
+    margin-left: -0.5em;
+    margin-right: -1px;
+}
+.aui-tabs.vertical-tabs > .tabs-menu > .menu-item.active-tab > a > strong {
+    padding: 4px 10px;
+
+}
+.aui-tabs.vertical-tabs > .tabs-menu > .menu-item > a {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 3px 10px 4px 10px;
+}
+
+.aui-tabs.vertical-tabs > .tabs-menu > .menu-item strong {
+    padding-right: 0;
+}
+
+.aui-tabs.vertical-tabs > .tabs-pane {
+    background: @aui-panel-bg-color;
+    border: 1px solid @aui-tabs-tab-border-color;
+    border-radius: 3px;
+    margin: 0 0 0 11em;
+    padding: 20px;
+    position: relative;
+}
+
+/* Horizontal Tabs */
+
+.aui-tabs.horizontal-tabs > .tabs-menu ~ .tabs-pane {
+    border-top: 1px solid @aui-tabs-tab-border-color;
+}
+
+.aui-tabs.horizontal-tabs > .tabs-menu {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    width: 100%;
+}
+
+.aui-tabs.horizontal-tabs[data-aui-responsive]:not([data-aui-responsive="false"]) > .tabs-menu {
+     font-size: 0;   //required to remove spacing between inline elements
+     margin: 0 0 -1px 0;
+     overflow: hidden;
+     white-space: nowrap;
+}
+
+.aui-tabs.horizontal-tabs > .tabs-menu > .menu-item {
+    background: #eee;
+    display: block;
+    float: left;
+    margin: 0;
+}
+
+.aui-tabs.horizontal-tabs[data-aui-responsive]:not([data-aui-responsive="false"]) > .tabs-menu > .menu-item {
+    border-bottom: 1px solid @aui-tabs-tab-border-color;
+    display: inline-block;
+    float: none;
+    font-size: @aui-tabs-font-size; //reset the font-size
+}
+
+.aui-tabs.horizontal-tabs > .tabs-menu > .menu-item:first-child {
+    margin-left: 20px;
+}
+.aui-tabs.horizontal-tabs > .tabs-menu > .menu-item:first-child a {
+    border-top-left-radius: 3px;
+    border-left: 1px solid @aui-tabs-tab-border-color;
+}
+.aui-tabs.horizontal-tabs > .tabs-menu > .menu-item:last-child a {
+    border-top-right-radius: 3px;
+}
+
+.aui-tabs.horizontal-tabs > .tabs-menu > .menu-item > a,
+.aui-tabs.aui-tabs-disabled.horizontal-tabs > .tabs-menu > .menu-item > a:focus,
+.aui-tabs.aui-tabs-disabled.horizontal-tabs > .tabs-menu > .menu-item > a:hover,
+.aui-tabs.aui-tabs-disabled.horizontal-tabs > .tabs-menu > .menu-item > a:active {
+    display: block;
+    border-right: 1px solid @aui-tabs-tab-border-color;
+    border-top: 1px solid @aui-tabs-tab-border-color;
+    padding: 5px 10px 4px 10px;
+    text-decoration: none;
+}
+
+.aui-tabs.horizontal-tabs > .tabs-menu > .menu-item.active-tab,
+.aui-tabs.horizontal-tabs[data-aui-responsive] > .tabs-menu > .menu-item.active-tab,
+.aui-tabs.aui-tabs-disabled.horizontal-tabs > .tabs-menu > .active-tab:focus,
+.aui-tabs.aui-tabs-disabled.horizontal-tabs > .tabs-menu > .active-tab:hover,
+.aui-tabs.aui-tabs-disabled.horizontal-tabs > .tabs-menu > .active-tab:active {
+    border-bottom: 1px solid @aui-tabs-tab-active-bg-color;
+    margin-bottom: -1px;
+    position: relative;
+}
+.aui-tabs.horizontal-tabs > .tabs-menu > .active-tab > a,
+.aui-tabs.horizontal-tabs > .tabs-menu > .active-tab > a strong {
+    font-weight: normal;
+}
+
+/* Disabled/Page Tabs */
+.aui-tabs.aui-tabs-disabled > .tabs-menu > .menu-item > a {
+    cursor: default;
+}
+
+/* reloadable tabs (active tab has different cursor affordance) */
+.active-tab.reloadable-tab a,
+.active-tab.reloadable-tab a strong { cursor: pointer !important; }
+
+/* legacy tabs override - deprecated, to be remove in aui 5.0 */
+.aui-tabs.vertical-tabs.aui-legacystyle2011 > .tabs-menu .menu-item strong {
+    text-overflow: clip;
+}
+.aui-tabs.vertical-tabs.aui-legacystyle2011 > .tabs-menu .menu-item.active-tab {
+    margin-right: 0;
+}
+.aui-tabs.vertical-tabs.aui-legacystyle2011 > .tabs-pane {
+    border-radius: 0;
+}
+
+.aui-tabs.horizontal-tabs > .tabs-menu > .menu-item.hidden {
+    display: none;
+}

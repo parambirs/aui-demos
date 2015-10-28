@@ -1,0 +1,167 @@
+@import 'aui-theme/components/messages';
+@import 'aui-theme/core/colors';
+
+#aui {
+    .animation(@animation) {
+        -webkit-animation: @animation;
+        animation: @animation;
+    }
+
+    .border-radius(@radius) {
+        border-radius: @radius;
+    }
+
+    .box-sizing(@sizing: border-box) {
+        box-sizing: @sizing;
+    }
+
+    .prevent-text-selection() {
+        -ms-user-select: none; // IE10+
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .gradient {
+        .vertical(@start-color: #fff, @end-color: #f2f2f2, @start-percent: 0%, @end-percent: 100%) {
+            background: @end-color;
+            background: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent);
+        }
+    }
+
+    .rotate(@angle) {
+        -webkit-transform: rotate(@angle);
+        -ms-transform: rotate(@angle);
+        transform: rotate(@angle);
+    }
+
+    .shadow {
+        .inner(@inner: 0 1px 0 0 rgba(255, 255, 255, 0.1) inset) {
+            box-shadow: @inner;
+        }
+
+        .outer(@outer: 0 1px 1px 0 rgba(0, 0, 0, 0.2)) {
+            box-shadow: @outer;
+        }
+
+        .inner-and-outer(@inner: 0 1px 0 0 rgba(255, 255, 255, 0.1) inset, @outer: 0 1px 1px 0 rgba(0, 0, 0, 0.2)) {
+            box-shadow: @inner, @outer;
+        }
+    }
+
+    .text-truncate() {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .transition(@transition) {
+        transition: @transition;
+    }
+
+    .transition {
+        .fadeIn(@length: 0.2s, @delay: 0s, @max-opacity: 1) {
+            opacity: @max-opacity;
+            transition: opacity @length;
+            transition-delay: @delay;
+            visibility: visible;
+        }
+
+        .fadeOut(@length: 0.2s, @delay: 0s) {
+            opacity: 0;
+            transition: opacity @length, visibility @length;
+            transition-delay: @delay;
+            visibility: hidden;
+        }
+    }
+
+    .transform-rotate(@angle) {
+        -ms-transform: rotate(@angle);
+        -webkit-transform: rotate(@angle);
+        transform: rotate(@angle);
+    }
+
+    .height-calc(@calc) {
+        height: ~"calc(@{calc})";
+    }
+
+    .placeholder(@color) {
+        //must be in a different selector as browsers will ignore the whole line if it doesn't recognise something
+        &::-webkit-input-placeholder {
+            color: @color;
+            opacity: 1;
+        }
+        &::-moz-placeholder{
+            color: @color;
+        }
+        &.aui-placeholder-shown, &.placeholder-shown{
+            color: @color;
+        }
+    }
+//    Responsive mixins
+    .responsive-small(@rules) {
+        html.aui-responsive {
+            @media screen and (max-width: 767px) {
+                @rules();
+            }
+        }
+    }
+    .responsive-medium(@rules) {
+        html.aui-responsive {
+            @media screen and (max-width: 800px) {
+                @rules();
+            }
+        }
+    }
+
+    .responsive-large(@rules) {
+        html.aui-responsive {
+            @media screen and (max-width: 1023px) {
+                @rules();
+            }
+        }
+    }
+
+    // messages / flags
+
+    .icon-bar() {
+        //The coloured bar on the left
+        &:before {
+            background-color: @aui-message-info-border-color;
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: @aui-message-side-width;
+        }
+
+        //The actual icon
+        &:after {
+            color: @aui-color-white;
+            font-family: @aui-icon-font-family;
+            font-size: @aui-message-icon-size;
+            -webkit-font-smoothing: antialiased; /* Improves the rendering of icons */
+            font-style: normal;
+            font-weight: normal;
+            left: (@aui-message-side-width - @aui-message-icon-size) / 2;
+            line-height: 1;
+            margin-top: -@aui-message-icon-size/2;
+            position: absolute;
+            speak: none; /* This prevents screen readers from pronouncing the pseudo element text content used to trigger the icon font */
+            top: 50%;
+        }
+    }
+
+    .icon-glyph(@content, @color, @background-color) {
+        //The actual icon
+        &:after {
+            content: @content;
+            color: @color;
+        }
+        //The coloured bar on the left
+        &:before {
+            background-color: @background-color;
+        }
+    }
+}

@@ -1,0 +1,80 @@
+@import './imports/global';
+
+/*! AUI Badge */
+aui-badge {
+    background: @aui-badge-bg-color; /* RGBA */
+    border-radius: 2em; /* needs to be at least 1em + border-top + border-bottom + padding-top + padding-bottom to get perfectly rounded */
+    color: rgba(51, 51, 51, 0.8);
+    // color: fade(@aui-badge-text-color, 80%); // LESS1.3.1
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 0.99; /* avoiding rounding differences across webkit implementations */
+    margin: 0;
+    min-height: 1em;
+    min-width: 1em; /* want a capsule style even when single digit */
+    padding: 3px 5px 2px 5px; /* override in aui-badge-ie.css */
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+/* Light version for contexts we know about */
+.aui-header a:active > aui-badge,
+.aui-button-primary > aui-badge,
+.aui-dropdown2.aui-style-default .active > aui-badge {
+    background: @aui-badge-on-blue-bg-color; /* RGBA */
+    color: @aui-badge-on-blue-text-color;
+}
+.aui-button[disabled] > aui-badge {
+    background: @aui-badge-bg-color; /* RGBA */
+    color: inherit;
+}
+.aui-button-primary[disabled] > aui-badge {
+    background: @aui-badge-on-blue-bg-color; /* RGBA */
+}
+.aui-button > aui-badge,
+.aui-tabs .menu-item aui-badge {
+    top: -1px; /* slight tweak to position them in specific contexts */
+}
+
+// *** DEPRECATED ***
+// ------------------
+.aui-badge {
+    background: @aui-badge-bg-color; /* RGBA */
+    border-radius: 2em; /* needs to be at least 1em + border-top + border-bottom + padding-top + padding-bottom to get perfectly rounded */
+    color: rgba(51, 51, 51, 0.8);
+    // color: fade(@aui-badge-text-color, 80%); // LESS1.3.1
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 0.99; /* avoiding rounding differences across webkit implementations */
+    margin: 0;
+    min-height: 1em;
+    min-width: 1em; /* want a capsule style even when single digit */
+    padding: 3px 5px 2px 5px; /* override in aui-badge-ie.css */
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+}
+/* Light version for contexts we know about */
+.aui-header a:active > .aui-badge,
+.aui-button-primary > .aui-badge,
+.aui-dropdown2.aui-style-default .active > .aui-badge {
+    background: @aui-badge-on-blue-bg-color; /* RGBA */
+    color: @aui-badge-on-blue-text-color;
+}
+.aui-button[disabled] > .aui-badge {
+    background: @aui-badge-bg-color; /* RGBA */
+    color: inherit;
+}
+.aui-button-primary[disabled] > .aui-badge {
+    background: @aui-badge-on-blue-bg-color; /* RGBA */
+}
+.aui-button > .aui-badge,
+.aui-tabs .menu-item .aui-badge {
+    top: -1px; /* slight tweak to position them in specific contexts */
+}

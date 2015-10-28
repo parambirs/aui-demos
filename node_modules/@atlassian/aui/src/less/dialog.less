@@ -1,0 +1,183 @@
+@import './imports/global';
+
+.aui-dialog-shadow-parent {
+    position: fixed;
+    overflow: hidden;
+    left:50%;
+    top:50%;
+}
+.aui-popup {
+    background-color: #fff;
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    z-index: 3000;
+}
+.aui-dialog {
+    background: @aui-dialog-bg-color;
+    border: 1px solid @aui-dialog-border-color;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.aui-dialog .dialog-blanket {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    background: #000;
+}
+
+/* dialog header styles */
+.aui-dialog .dialog-title {
+    border-bottom: 1px solid @aui-dialog-border-color;
+    box-sizing: border-box;
+    height: 56px; /* NOTE: This value is hard-coded in dialog.js as HEADER_HEIGHT */
+    margin: 0;
+    overflow: hidden;
+    padding: 15px @aui-dialog-padding;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.aui-dialog h2.dialog-title {
+    color: @aui-text-color;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* dialog navigation styles */
+.aui-dialog .dialog-page-menu {
+    background: #fff;
+    border-right: 1px solid @aui-dialog-border-color;
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    list-style: none;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 10px 10px 20px 10px;
+    width: 25%;
+}
+.aui-dialog .dialog-page-menu li.page-menu-item {
+    margin: 0;
+    padding: 0;
+}
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button {
+    background: none;
+    border: 0;
+    color: @aui-link-color;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit; /* = 14px */
+    line-height: 1.1428; /* 16px equiv */
+    padding: 7px 10px;
+    margin: 0;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+}
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:hover,
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:focus {
+    background-color: #e6e6e6;
+}
+.aui-dialog .dialog-page-menu li.page-menu-item.selected button.item-button {
+    color: @aui-text-color;
+    font-weight: bold;
+}
+.aui-dialog .dialog-page-menu li.page-menu-item button.item-button:active,
+.aui-dialog .dialog-page-menu li.page-menu-item.selected button.item-button:active {
+    background-color: @aui-link-color;
+    color: #fff;
+}
+
+/* dialog body content styles */
+.aui-dialog .dialog-page-body {
+    background: #fff;
+}
+
+.aui-dialog .dialog-panel-body {
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 20px;
+}
+.aui-dialog .dialog-panel-body > *:first-child {
+    margin-top: 0;
+}
+
+/* dialog button panel styles */
+.aui-dialog .dialog-button-panel {
+    border-top: 1px solid @aui-dialog-border-color;
+    box-sizing: border-box;
+    clear: both;
+    height: 51px; /* NOTE: This value is hard-coded in dialog.js as BUTTONS_HEIGHT */
+    overflow: hidden;
+    padding: 10px;
+    text-align: right;
+    width: 100%;
+}
+.aui-dialog .dialog-button-panel button.button-panel-button {
+    #aui.box-sizing();
+    background: @aui-button-light-bg-color;
+    border: @aui-button-border-width @aui-button-border-style @aui-button-default-border-color;
+    border-radius: @aui-button-border-radius;
+    color: @aui-button-default-text-color;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-variant: normal;
+    line-height: 20px;
+    padding: 4px 10px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+    vertical-align: baseline;
+}
+.aui-dialog .dialog-button-panel button.button-panel-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+.aui-dialog .dialog-button-panel button.button-panel-button:focus,
+.aui-dialog .dialog-button-panel button.button-panel-button:hover {
+    background: @aui-button-default-hover-bg-color;
+    border-color: @aui-dialog-button-hover-border-color;
+    color: #000;
+    text-decoration:none;
+}
+
+.aui-dialog .dialog-button-panel button.button-panel-button:active {
+    #aui.shadow.inner(inset @aui-button-active-inner-shadow-x @aui-button-active-inner-shadow-y @aui-button-active-inner-shadow-blur @aui-button-active-inner-shadow-spread @aui-button-active-inner-shadow-color);
+    background: @aui-button-default-active-bg-color;
+    text-shadow: none;
+    text-decoration:none;
+}
+
+.aui-dialog .dialog-button-panel a.button-panel-link {
+    background: transparent;
+    border-color: transparent;
+    color: @aui-link-color;
+    display: inline-block;
+    padding: 5px 0;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.aui-dialog .dialog-button-panel a.button-panel-link:focus,
+.aui-dialog .dialog-button-panel a.button-panel-link:hover,
+.aui-dialog .dialog-button-panel a.button-panel-link:active {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.aui-dialog .dialog-button-panel button.button-panel-button,
+.aui-dialog .dialog-button-panel a.button-panel-link {
+    margin: 0 10px 0 0;
+}
+.aui-dialog .dialog-button-panel button.button-panel-button.left,
+.aui-dialog .dialog-button-panel a.button-panel-link.left {
+    float: left;
+    margin: 0 0 0 10px;
+}

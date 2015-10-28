@@ -1,0 +1,407 @@
+@import './imports/global';
+
+/*! AUI Navigation */
+
+/* Nav defaults - put very little here!
+-------------------- */
+.aui-nav,
+.aui-nav > li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Horizontal, breadcrumbs and pagination are all horizontal */
+.aui-nav-breadcrumbs:after,
+.aui-nav-pagination:after,
+.aui-nav-horizontal:after,
+.aui-navgroup-horizontal .aui-nav:after,
+.aui-navgroup-horizontal .aui-navgroup-inner:after {
+    clear: both;
+    content: " ";
+    display: table;
+}
+.aui-nav-breadcrumbs > li,
+.aui-nav-pagination > li,
+.aui-nav-horizontal > li,
+.aui-navgroup-horizontal .aui-nav > li {
+    float: left;
+}
+
+/* Navigation headings
+-------------------- */
+.aui-nav-heading {
+    color: @aui-nav-heading-text-color;
+    font-size: @aui-font-size-small;
+    font-weight: bold;
+    line-height: 1.66666666666667; /* 20px */
+    text-transform: uppercase;
+}
+
+/* Breadcrumb navigation
+-------------------- */
+.aui-nav-breadcrumbs > li {
+    padding: 0 @aui-grid 0 0;
+}
+
+.aui-nav-breadcrumbs > li + li:before {
+    content: "/";
+    padding-right: @aui-grid;
+}
+
+/* Horizontal Navigation
+-------------------- */
+.aui-navgroup-horizontal .aui-nav > li a,
+.aui-nav-horizontal > li a {
+    padding-right: @aui-grid;
+}
+
+/* Pagination
+-------------------- */
+.aui-nav-pagination {
+    margin: @aui-grid 0 0 0;
+}
+.aui-nav-pagination > li {
+    padding: 0;
+}
+/* Need padding on the A elements for big click areas.
+   Set equal left/right to help align the inline dialog on truncation. */
+.aui-nav-pagination > li > a {
+    padding: @aui-grid @aui-grid 0 @aui-grid;
+}
+/* Don't set top/bottom as that throws non-linked items out of whack. */
+.aui-nav-pagination > li.aui-nav-selected,
+.aui-nav-pagination > li.aui-nav-truncation {
+    padding-left: @aui-grid;
+    padding-right: @aui-grid;
+}
+.aui-nav-pagination .aui-nav-truncation > a {
+    padding-left: 0;
+    padding-right: 0;
+}
+/* Remove whitespace from first and last child */
+.aui-nav-pagination > li:first-child > a,
+.aui-nav-pagination > li.aui-nav-truncation:first-child,
+.aui-nav-pagination > li.aui-nav-selected:first-child {
+    padding-left: 0;
+}
+.aui-nav-pagination > li:last-child > a,
+.aui-nav-pagination > li.aui-nav-truncation:last-child,
+.aui-nav-pagination > li.aui-nav-selected:last-child {
+    padding-right: 0;
+}
+
+.aui-nav-pagination a[aria-disabled="true"],
+.aui-nav-pagination a[aria-disabled="true"]:link,
+.aui-nav-pagination a[aria-disabled="true"]:visited,
+.aui-nav-pagination a[aria-disabled="true"]:focus,
+.aui-nav-pagination a[aria-disabled="true"]:hover,
+.aui-nav-pagination a[aria-disabled="true"]:active {
+    color: @aui-nav-pagination-active-text-color;
+    text-decoration: none;
+}
+
+/* "current" is deprecated in 5.1 */
+.aui-nav-pagination > li.aui-nav-current,
+.aui-nav-pagination > li.aui-nav-selected {
+    color: @aui-nav-pagination-text-color;
+    font-weight: bold;
+}
+
+/* Vertical Navigation
+-------------------- */
+.aui-navgroup-vertical .aui-nav > li > a,
+.aui-nav-vertical > li > a {
+    color: @aui-nav-link-color;
+    display: block;
+    line-height: 1.14285714285714; /* 16px equiv */
+    padding: @aui-nav-link-spacing-vertical @aui-nav-link-spacing-horizontal;
+    word-wrap: break-word;
+}
+
+.aui-navgroup-vertical .aui-nav > li > a:focus,
+.aui-navgroup-vertical .aui-nav > li > a:hover,
+.aui-nav-vertical > li > a:focus,
+.aui-nav-vertical > li > a:hover {
+    background: @aui-nav-link-active-bg-color;
+    text-decoration: none;
+}
+
+.aui-navgroup-vertical .aui-nav .aui-nav-selected > a,
+.aui-nav-vertical .aui-nav .aui-nav-selected > a {
+    color: @aui-nav-text-color;
+    font-weight: bold;
+}
+
+.aui-navgroup-vertical .aui-nav,
+.aui-navgroup-vertical .aui-nav-heading {
+    border-top: @aui-border-width @aui-border-style @aui-border-color;
+    margin-top: (@aui-grid / 2);
+    padding-top: (@aui-grid / 2);
+}
+
+.aui-navgroup-vertical .aui-nav-heading {
+    padding: @aui-grid @aui-grid (@aui-grid * .4) @aui-grid;
+}
+
+.aui-navgroup-vertical .aui-nav:first-child,
+.aui-navgroup-vertical .aui-navgroup-inner > .aui-nav-heading:first-child,
+.aui-navgroup-vertical .aui-navgroup-primary > .aui-nav-heading:first-child,
+.aui-navgroup-vertical .aui-nav-heading + .aui-nav {
+    border-top: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/*  tree indication for nested aui-nav's */
+.aui-navgroup-vertical .aui-nav .aui-nav {
+    border-top: none;
+    margin-top: 0;
+    padding: 0 0 0 (@aui-icon-size-small + @aui-grid);
+
+    > li {
+        position: relative;
+
+        &:before,
+        &:after {
+            background-color: @aui-border-color;
+            content: "";
+            left: -(@aui-nav-subtree-indicator-width);
+            position: absolute;
+        }
+
+        &:before {
+            bottom: 0;
+            top: 0;
+            width: @aui-nav-subtree-indicator-width;
+        }
+
+        &:after {
+            height: @aui-nav-subtree-indicator-width;
+            top: @aui-font-size-medium;
+            width: (@aui-grid / 2);
+        }
+        &:last-child:before, &.aui-nav-more:before {
+            bottom: 50%;
+        }
+    }
+}
+
+/* twixi for nested navigation
+------------------------------ */
+.aui-navgroup-vertical .aui-nav > li[aria-expanded] {
+    position: relative;
+
+    .aui-nav-heading {
+        padding-left: 0;
+    }
+
+    .aui-nav-subtree-toggle {
+        color: @aui-nav-subtree-toggle-icon-color;
+        left: 0;
+        position: absolute;
+        padding-left: 0;
+        padding-right: 0;
+        top: 0;
+        width: (@aui-grid * 1.5);
+    }
+
+    li {
+        position: relative;
+    }
+
+    &[aria-expanded="false"] {
+        > * {
+            display: none;
+        }
+
+        > .aui-nav-subtree-toggle,
+        > .aui-nav-item {
+            display: inherit;
+        }
+    }
+}
+
+/* RHS actions dropdown
+------------------------ */
+
+.aui-navgroup-vertical .aui-nav .aui-nav-item-actions {
+    @aui-nav-item-actions-top-offset: 7px;
+    @aui-nav-item-actions-left-offset: 4px;
+
+    border-radius: 2px;
+    display: block;
+    height: @aui-icon-size-small;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: (@aui-grid / 2);
+    text-indent: -999em;
+    top: @aui-nav-item-actions-top-offset;
+    width: @aui-icon-size-small;
+
+    &:after {
+        border: 4px solid transparent;
+        border-top-color: @aui-text-color;
+        content: "";
+        height: 0;
+        left: @aui-nav-item-actions-left-offset;
+        position: absolute;
+        top: @aui-nav-item-actions-top-offset - 1; // nudge to make it visually centered
+        width: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        background-color: @aui-nav-item-actions-dropdown-trigger-hover-color;
+
+        &:after {
+            border-top-color: @aui-text-color;
+        }
+    }
+
+    ~ .aui-nav-item-label {
+        margin-right: (@aui-grid * 1.5);
+    }
+}
+
+// END - RHS actions dropdown
+//-----------------------
+
+/* Horizontal Navgroup
+-------------------- */
+.aui-navgroup-horizontal {
+    background: @aui-navgroup-horizontal-bg-color;
+    border-top: @aui-border-width @aui-border-style @aui-border-color;
+    border-bottom: @aui-border-width @aui-border-style @aui-border-color;
+    margin: 0;
+    padding: 0 @aui-grid;
+}
+
+.aui-page-panel-content > .aui-navgroup-horizontal {
+    margin-left: -(@aui-grid * 2);
+    margin-right: -(@aui-grid * 2);
+}
+.aui-navgroup-horizontal + .aui-page-panel {
+    border-top: 0;
+    margin-top: 0;
+}
+.aui-page-panel-content > .aui-navgroup-horizontal:first-child {
+    margin-top: -(@aui-grid * 2);
+}
+
+/* Nav in a Navbar */
+.aui-navgroup-horizontal .aui-nav > li a {
+    color: @aui-nav-link-color;
+    display: block;
+    margin: 0;
+    padding: (@aui-grid - 1) @aui-grid;
+    text-decoration: none;
+}
+.aui-navgroup-horizontal .aui-nav > li a.active,
+.aui-navgroup-horizontal .aui-nav > li a:focus,
+.aui-navgroup-horizontal .aui-nav > li a:hover {
+    background: @aui-nav-link-active-bg-color;
+    text-decoration: none;
+}
+
+.aui-navgroup-horizontal .aui-nav > .aui-nav-selected a {
+    color: @aui-nav-link-selected-text-color;
+    font-weight: bold;
+    position: relative;
+}
+
+.aui-navgroup-horizontal .aui-nav > .aui-nav-selected a:before,
+.aui-navgroup-horizontal .aui-nav > .aui-nav-selected a:after {
+    border: 8px solid transparent;
+    border-style: outset outset solid outset; /* fixes FF bug */
+    border-bottom-color: @aui-border-color;
+    bottom: 0;
+    content: "";
+    height: 0;
+    left: 50%;
+    margin-left: -8px;
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+}
+.aui-navgroup-horizontal .aui-nav > .aui-nav-selected a:after {
+    background: transparent;
+    border-bottom-color: @aui-panel-bg-color;
+    bottom: -1px;
+}
+
+/* Split horizontal navgroups */
+.aui-navgroup-horizontal .aui-nav,
+.aui-navgroup-horizontal .aui-nav-heading,
+.aui-navgroup-horizontal .aui-navgroup-primary {
+    float: left;
+}
+
+.aui-navgroup-horizontal .aui-navgroup-secondary {
+    float: right;
+}
+
+/* Horizontal navgroup + Dropdown2 integration. Note: ADG prohibits dropdowns in vertical nav. */
+.aui-navgroup-horizontal .aui-dropdown2-trigger .aui-icon-dropdown {
+    display: none;
+}
+.aui-navgroup-horizontal .aui-dropdown2-trigger {
+    padding-right: 23px !important; /* 8px (arrow width) + 10px (right padding) + 5px (margin between arrow and logo) */
+    position: relative;
+}
+.aui-navgroup-horizontal .aui-nav > li a.aui-dropdown2-trigger:after {
+    border: 4px solid transparent;
+    content: "";
+    height: 0;
+    left: 100%; /* "left" + "margin-left" required because of webkit not working properly with "right" */
+    margin-left: -18px;
+    margin-top: -3px; /* Align top of arrow with top of x height */
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    width: 0;
+}
+.aui-navgroup-horizontal .aui-nav > li a.aui-dropdown2-trigger:after {
+    border-top-color: @aui-dropdown2-trigger-color;
+}
+.aui-navgroup-horizontal .aui-nav > li a.aui-dropdown2-trigger:hover:after,
+.aui-navgroup-horizontal .aui-nav > li a.aui-dropdown2-trigger.active:after {
+    opacity: 1;
+}
+
+/* Breadcrumbs in navbar */
+.aui-navgroup-horizontal .aui-nav-breadcrumbs > li,
+.aui-navgroup-horizontal .aui-nav-breadcrumbs > li:before {
+    padding: 0;
+}
+
+.aui-navgroup-horizontal .aui-nav-breadcrumbs > li a {
+    display: inline-block;
+}
+
+/* Bulletproofing - headings shouldn't be here but will at least not look heinously broken. */
+.aui-navgroup-horizontal .aui-nav-heading {
+    padding: @aui-grid @aui-grid 0 @aui-grid; /* 0 bottom required to unfuck IE9 */
+}
+
+.aui-nav-actions-list {
+    font-size: 0;
+    list-style: none;
+    margin: @aui-nav-actions-list-margin-top 0 0 0;
+    padding: 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    > li {
+        display: inline-block;
+        font-size: @aui-nav-actions-list-item-font-size;
+        margin-bottom: @aui-nav-actions-list-item-margin-bottom;
+        margin-right: @aui-nav-actions-list-item-margin-right;
+    }
+}

@@ -1,0 +1,256 @@
+@import './imports/global';
+
+aui-header {
+    display: block;
+}
+
+.aui-header {
+    background: @aui-header-bg-color;
+    border-bottom: @aui-header-border-width @aui-header-border-style @aui-header-border-color;
+    box-sizing: border-box;
+    color: @aui-header-text-color;
+    padding: 0 @aui-header-padding-x;
+}
+
+.aui-header:after,
+.aui-header .aui-header-logo a:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.aui-header .aui-header-logo,
+.aui-header .aui-nav {
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.aui-header .aui-header-secondary .aui-nav {
+    float: right;
+}
+
+.aui-header .aui-nav > li {
+    float: left;
+    padding: 0;
+}
+
+.aui-header a {
+    color: @aui-header-link-text-color;
+    display: block;
+    line-height: 1;
+    padding: @aui-header-link-padding-y @aui-header-link-padding-x;
+}
+
+.aui-header a:visited,
+.aui-header a:focus,
+.aui-header a:hover,
+.aui-header a:active {
+    text-decoration: none;
+}
+
+.aui-header .aui-header-logo a {
+    box-sizing: border-box;
+    float: left;
+    height: @aui-header-logo-height;
+    padding: @aui-header-logo-padding-y @aui-header-logo-padding-x;
+}
+
+.aui-header .aui-header-logo.aui-header-logo-textonly a {
+    font-size: 24px;
+    padding: (@aui-grid / 2) @aui-grid;
+}
+.aui-header .aui-header-logo-textonly .aui-header-logo-device {
+    float: left;
+    padding-top: @aui-header-logo-textonly-device-padding;
+    text-indent: 0;
+}
+.aui-header .aui-header-logo-textonly .aui-header-logo-device + .aui-header-logo-text {
+    padding: (@aui-grid / 2) 0 (@aui-grid / 2) @aui-grid;
+}
+
+/* for extra visible text, eg. instance names. */
+.aui-header .aui-header-logo .aui-header-logo-text {
+    display: block;
+    float: left;
+    font-size: @aui-header-logo-text-font-size;
+    line-height: @aui-header-logo-text-line-height;
+    margin: 0;
+    padding: @aui-grid 0 @aui-grid @aui-grid;
+}
+
+.aui-header .aui-header-logo-device {
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 100%;
+    display: block;
+    float: left;
+    height: @aui-header-logo-device-height;
+    padding: @aui-header-logo-device-padding-y @aui-header-logo-device-padding-x;
+    text-indent: -9999px;
+    text-align: left;
+}
+
+/* Custom IMG elements can be set in most products */
+.aui-header .aui-header-logo img {
+    border: 0;
+    float: left;
+    max-height: @aui-header-img-height;
+    padding: @aui-header-img-padding-y @aui-header-img-padding-x;
+}
+
+/* Positioning icons in the header */
+.aui-header .aui-icon {
+    margin: -1px 0;
+    vertical-align: top;
+}
+
+.aui-header a > .aui-avatar {
+    vertical-align: top;
+}
+.aui-header a > .aui-avatar-tiny {
+    margin: -1px 0; /* (16px Tiny Avatar height - 14px font size (line-height 1 in the header)) / 2 */
+}
+.aui-header a > .aui-avatar-small {
+    margin: -5px 0; /* (24px Small Avatar height - 14px font size (line-height 1 in the header)) / 2 */
+}
+
+/**
+ * Buttons in header
+ */
+.aui-header a.aui-button {
+    line-height: 1.42857142857143;
+}
+
+.aui-header .aui-button.aui-button-primary {
+    background: @aui-header-btn-primary-bg-color;
+    border: 0;
+    margin: (5px + @aui-header-padding-y) 10px 0 10px;
+    padding: 4px 10px; /* Make sure the correct padding applies (overrides the above padding: 13px 10px; for .aui-header a if ordering is missed up*/
+}
+
+.aui-header .aui-button.aui-button-primary.active{
+    padding-bottom: 4px; /* header doesn't need the button/dropdown integration padding change because it has no border */
+}
+
+.aui-header .aui-button.aui-button-primary:focus,
+.aui-header .aui-button.aui-button-primary:hover {
+    background: @aui-header-btn-primary-hover-bg-color;
+}
+
+.aui-header .aui-button.aui-button-primary:active {
+    background: @aui-header-btn-primary-active-bg-color;
+}
+
+/**
+ * Quick search for header
+ */
+.aui-header .aui-quicksearch {
+
+    @height: 30px;
+    @margin-top: 5px + @aui-header-padding-y;
+    @icon-height: @aui-icon-size-small;
+    @icon-width: @aui-icon-size-small;
+    @baseline-adjustment: 2px;
+    @icon-margin-top: @margin-top + (@height - @icon-height) / 2 - @baseline-adjustment;
+    @padding-left-right: 10px;
+    @icon-right-indent: @icon-width;
+    @text-padding-right: @icon-right-indent + @padding-left-right;
+
+    padding: 0 @aui-grid;
+    position: relative;     //needs to be relative so we can have a absolutely positioned icon
+
+    input[type='text'] {
+        background: @aui-header-quicksearch-bg-color;
+        border: none;
+        border-radius: @aui-header-quicksearch-border-radius;
+        box-shadow: @aui-header-quicksearch-box-shadow;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        color: @aui-header-quicksearch-color;
+        height: 2.143em; /* 30px effective - need height in ems so that user-specified font-sizes apply */
+        font-family: inherit;
+        font-size: inherit;
+        margin: @margin-top 0;
+        padding: 2px @text-padding-right 2px 10px;
+        vertical-align: baseline;
+        width: @aui-header-quicksearch-width;
+
+        &[type='text']:focus {
+            background: @aui-header-quicksearch-focus-bg-color;
+            color: @aui-header-quicksearch-focus-color;
+            outline: @aui-header-quicksearch-focus-outline;
+        }
+
+        /* Placeholder styling
+         * - You have to one rule per vendor because user agents are required to ignore a rule with an unknown selector.
+         *   Since WebKit doesn’t know the proprietary Mozilla selector and vice versa, you have to include them separately.
+         *   See http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css#answer-2610741
+         */
+
+        &::-webkit-input-placeholder {
+            color: @aui-header-quicksearch-color;
+        }
+
+        &::-moz-placeholder {  /* Firefox 19+ */
+            color: @aui-header-quicksearch-color;
+        }
+
+        &:-ms-input-placeholder {
+            color: @aui-header-quicksearch-color;
+        }
+
+        //focus placeholder
+
+        &:focus {
+            &::-webkit-input-placeholder {
+                color: @aui-header-quicksearch-focus-color;
+            }
+
+            &::-moz-placeholder {  /* Firefox 19+ */
+                color: @aui-header-quicksearch-focus-color;
+            }
+
+            &:-ms-input-placeholder {
+                color: @aui-header-quicksearch-focus-color;
+            }
+        }
+
+    }
+
+    //icon
+    &:after {
+        color: @aui-header-quicksearch-color;
+        content: @aui-header-quicksearch-icon; // search icon
+        font-family: @aui-icon-font-family;
+        height: @icon-height;
+        margin-top: @icon-margin-top;
+        position: absolute;
+        right: @icon-right-indent;
+        top: 0;
+        width: @icon-width;
+    }
+}
+.aui-header .aui-quicksearch input {
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    background: @aui-header-quicksearch-bg-color;
+    border: none;
+    border-radius: 5em;
+    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    color: @aui-header-quicksearch-color;
+    font-family: inherit;
+    font-size: inherit;
+    height: 1.71428571428571em; /* 24px effective - need height in ems so that user-specified font-sizes apply */
+    line-height: 1.42857142857143; /* 20px effective */
+    margin: 8px 0;
+    padding: 2px 10px;
+    vertical-align: baseline;
+    width: @aui-header-quicksearch-width;
+}
+.aui-header .aui-quicksearch input:focus {
+    background-color: @aui-header-quicksearch-focus-color;
+    outline: none;
+}
+

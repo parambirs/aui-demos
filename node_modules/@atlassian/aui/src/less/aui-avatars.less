@@ -1,0 +1,118 @@
+@import './imports/global';
+
+/* AUI avatar component */
+.aui-avatar {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: text-bottom;
+}
+.aui-avatar-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+.aui-avatar img {
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.aui-avatar-xsmall,
+.aui-avatar-xsmall .aui-avatar-inner {
+    height: 16px;
+    width: 16px;
+}
+.aui-avatar-small,
+.aui-avatar-small .aui-avatar-inner {
+    height: 24px;
+    width: 24px;
+}
+.aui-avatar-medium,
+.aui-avatar-medium .aui-avatar-inner {
+    height: 32px;
+    width: 32px;
+}
+.aui-avatar-large,
+.aui-avatar-large .aui-avatar-inner {
+    height: 48px;
+    width: 48px;
+}
+.aui-avatar-xlarge,
+.aui-avatar-xlarge .aui-avatar-inner {
+    height: 64px;
+    width: 64px;
+}
+.aui-avatar-xxlarge,
+.aui-avatar-xxlarge .aui-avatar-inner {
+    height: 96px;
+    width: 96px;
+}
+.aui-avatar-xxxlarge,
+.aui-avatar-xxxlarge .aui-avatar-inner {
+    height: 128px;
+    width: 128px;
+}
+
+/* Forces larger images to downscale in IE11. */
+.aui-avatar-xsmall .aui-avatar-inner img {
+    max-height: 16px;
+    max-width: 16px;
+}
+.aui-avatar-small .aui-avatar-inner img {
+    max-height: 24px;
+    max-width: 24px;
+}
+.aui-avatar-medium .aui-avatar-inner img {
+    max-height: 32px;
+    max-width: 32px;
+}
+.aui-avatar-large .aui-avatar-inner img {
+    max-height: 48px;
+    max-width: 48px;
+}
+.aui-avatar-xlarge .aui-avatar-inner img {
+    max-height: 64px;
+    max-width: 64px;
+}
+.aui-avatar-xxlarge .aui-avatar-inner img {
+    max-height: 96px;
+    max-width: 96px;
+}
+.aui-avatar-xxxlarge .aui-avatar-inner img {
+    max-height: 128px;
+    max-width: 128px;
+}
+
+.aui-avatar-xxlarge img,
+.aui-avatar-xxxlarge img {
+    border-radius: 5px;
+}
+
+/* Project avatars - circular and different sizes */
+.aui-avatar-project {
+    background-color: @aui-avatar-project-bg-color;
+    box-shadow: 0 0 0 1px @aui-avatar-project-border-color;
+    position: relative;
+}
+.aui-avatar-project,
+.aui-avatar-project img {
+    border-radius: 100%;
+}
+.aui-avatar-project img {
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+}
+/* The below style aims to minimise any "halo" caused by the antialiasing of the image */
+.aui-avatar-project:before {
+    border-radius: 100%;
+    border: 1px solid @aui-avatar-project-border-color;
+    bottom: -1px;
+    content: "";
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}

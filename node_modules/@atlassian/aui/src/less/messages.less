@@ -1,0 +1,141 @@
+@import './imports/global';
+
+aui-message {
+    display: block;
+    margin: @aui-message-stacked-spacing 0 0 0;
+}
+
+.aui-message {
+    #aui.icon-bar();
+    background: @aui-color-white;
+    border-top: @aui-message-border-top;
+    border-right: @aui-message-border-right;
+    border-bottom: @aui-message-border-bottom;
+    border-left: @aui-message-border-left;
+    border-radius: @aui-message-border-radius;
+    color: @aui-message-text-color;
+    line-height: @aui-message-line-height;
+    margin: @aui-message-stacked-spacing 0 0 0;
+    overflow-wrap: break-word;
+    padding-bottom: @aui-message-vertical-padding;
+    padding-left: @aui-message-side-width + @aui-message-padding-left;
+    padding-right: @aui-message-padding-right;
+    padding-top: @aui-message-vertical-padding;
+    position: relative;
+    word-wrap: break-word;
+    word-break: break-word;
+
+    #aui.icon-glyph(@aui-message-info-icon-glyph, @aui-message-info-icon-color, @aui-message-info-icon-bg-color);
+
+    & .aui-icon.icon-close {
+        background-image: none;
+        color: @aui-color-medium-gray;
+        text-indent: inherit;
+        //The close cross
+        &:before {
+            content: @aui-message-close-icon-glyph;
+            font-family: @aui-icon-font-family;
+            font-size: @aui-message-icon-size;
+            -webkit-font-smoothing: antialiased; /* Improves the rendering of icons */
+            font-style: normal;
+            font-weight: normal;
+        }
+        &:hover {
+            color: @aui-color-charcoal;
+        }
+    }
+
+    /** deprecated; replaced with icon font */
+    .aui-icon-success,
+    .aui-icon-warning,
+    .aui-icon-info,
+    .aui-icon-error,
+    .aui-icon-hint,
+    .aui-icon-generic,
+    .icon-generic,
+    .icon-error,
+    .icon-hint,
+    .icon-info,
+    .icon-success,
+    .icon-warning {
+        display: none;
+    }
+}
+aui-message:first-child,
+.aui-message:first-child {
+    margin-top: 0;
+}
+.aui-popup .aui-message.closeable,
+.aui-dialog .aui-message.closeable {
+    z-index: 4000;
+}
+
+/* DEPRECATED .error, .warning, .hint, .info, .success */
+.aui-message.error,
+.aui-message-error {
+    background: @aui-message-error-bg-color;
+    border-color: @aui-message-error-border-color;
+    color: @aui-message-error-text-color;
+    #aui.icon-glyph(@aui-message-error-icon-glyph, @aui-message-error-icon-color, @aui-message-error-icon-bg-color);
+}
+.aui-message.warning,
+.aui-message-warning {
+    background: @aui-message-warning-bg-color;
+    border-color: @aui-message-warning-border-color;
+    color: @aui-message-warning-text-color;
+    #aui.icon-glyph(@aui-message-warning-icon-glyph, @aui-message-warning-icon-color, @aui-message-warning-icon-bg-color);
+}
+.aui-message.hint,
+.aui-message-hint,
+.aui-message.info,
+.aui-message-info {
+    background: @aui-message-info-bg-color;
+    border-color: @aui-message-info-border-color;
+    color: @aui-message-info-text-color;
+    #aui.icon-glyph(@aui-message-info-icon-glyph, @aui-message-info-icon-color, @aui-message-info-icon-bg-color);
+}
+.aui-message.success,
+.aui-message-success {
+    background: @aui-message-success-bg-color;
+    border-color: @aui-message-success-border-color;
+    color: @aui-message-success-text-color;
+    #aui.icon-glyph(@aui-message-success-icon-glyph, @aui-message-success-icon-color, @aui-message-success-icon-bg-color);
+}
+
+
+/* Message titles */
+
+.aui-message p.title {
+    font-weight: bold;
+}
+
+/* IE double bolds otherwise... */
+.aui-message p.title strong {
+    font-weight: inherit;
+}
+
+.aui-message.closeable {
+    .icon-close {
+        cursor: pointer;
+        left: auto;
+        opacity: 0;
+        position: absolute;
+        right: @aui-message-close-icon-padding;
+        top: @aui-message-close-icon-padding;
+    }
+
+    &:hover .icon-close,
+    .icon-close:focus,
+    &:not(.fadeout):not(.aui-will-close) .icon-close {
+        opacity: 1;
+    }
+}
+
+/* End aui-icon position */
+
+/* Footer interop (provisional, just enough to stop them looking broken) */
+#footer .aui-message {
+    margin-left: 20px;
+    margin-right: 20px;
+    text-align: left;
+}

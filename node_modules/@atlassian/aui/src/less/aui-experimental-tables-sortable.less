@@ -1,0 +1,72 @@
+@import './imports/global';
+
+/*! AUI Sortable Tables */
+.aui-table-sortable .tablesorter-header {
+    cursor: pointer;
+}
+
+/**
+ * Unsortable columns should not get the hover effects
+ */
+.aui-table-sortable .tablesorter-header.aui-table-column-unsortable {
+    cursor: default;
+}
+
+.aui-table-sortable .tablesorter-header.aui-table-column-unsortable:hover {
+    background-color: inherit;
+    color: inherit;
+}
+
+/**
+ * Color of header when selected or hovered.
+ */
+.aui-table-sortable .tablesorter-header:hover,
+.aui-table-sortable .tablesorter-headerAsc,
+.aui-table-sortable .tablesorter-headerDesc {
+    background-color: @aui-table-sortable-active-bg-color;
+    color: @aui-text-color;
+}
+
+/**
+ * Used to generate the arrow on the right.
+ */
+.aui-table-sortable .aui-table-header-content:after {
+    border: @aui-table-sortable-arrow-height solid transparent;
+    content: "";
+    display: inline-block;
+    margin-left: 5px;
+    position: relative;
+    width: 0;
+}
+
+/**
+ * If the table header is hovered add the border color.
+ */
+.aui-table-sortable .tablesorter-header:hover .aui-table-header-content:after {
+    border-top-color: @aui-table-sortable-active-border-color;
+    border-bottom-color: transparent;
+    opacity: 0.5;
+    top: @aui-table-sortable-arrow-height / 2; // push down by half the height of the arrow (border)
+}
+
+/**
+ * If descending add border color
+ */
+.aui-table-sortable .tablesorter-headerAsc .aui-table-header-content:after,
+.aui-table-sortable .tablesorter-headerAsc:hover .aui-table-header-content:after {
+    border-top-color: transparent;
+    border-bottom-color: @aui-table-sortable-active-border-color;
+    opacity: 1;
+    top: 0 - @aui-table-sortable-arrow-height / 2; // push down by half the height of the arrow (border)
+}
+
+/**
+ * If ascending add border color
+ */
+.aui-table-sortable .tablesorter-headerDesc .aui-table-header-content:after,
+.aui-table-sortable .tablesorter-headerDesc:hover .aui-table-header-content:after {
+    border-top-color: @aui-table-sortable-active-border-color;
+    border-bottom-color: transparent;
+    opacity: 1;
+    top: @aui-table-sortable-arrow-height / 2; // push down by half the height of the arrow (border)
+}

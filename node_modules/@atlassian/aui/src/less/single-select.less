@@ -1,0 +1,160 @@
+@import 'imports/global';
+
+@aui-select-image-size: 16px;
+@aui-select-image-in-input-top: 6px;
+@aui-select-image-in-input-left: 10px;
+@aui-select-image-in-input-right: 5px;
+@aui-select-image-vertical-padding: 2px;
+@aui-select-image-horizontal-padding: 6px;
+
+.aui-optionlist {
+    background-color: @aui-color-white;
+}
+
+.aui-popover {
+    box-sizing: border-box;
+    box-shadow: @aui-single-select-box-shadow;
+    max-width: 300px;
+    min-width: 160px;
+    position: absolute;
+
+    [role="option"] {
+        color: inherit;
+        display: block;
+        padding: 3px 10px;
+        text-decoration: none;
+
+        &.aui-select-suggestion {
+            cursor: pointer;
+        }
+    }
+
+    img {
+        display: inline-block;
+        height: @aui-select-image-size;
+        position: relative;
+        padding-right: @aui-select-image-horizontal-padding;
+        top: @aui-select-image-vertical-padding;
+        vertical-align: baseline;
+        width: @aui-select-image-size;
+    }
+
+    ul {
+        list-style: none;
+        margin: 2px 0;
+        padding-left: 0;
+
+        .inactive-color() {
+            background-color: @aui-single-select-bg-color;
+            color: @aui-single-select-text-color;
+        }
+
+        .active-color() {
+            background-color: @aui-single-select-active-bg-color;
+            color: @aui-single-select-active-text-color;
+        }
+
+        [role="option"] {
+            .inactive-color();
+
+            &:not(.aui-select-no-suggestions):hover {
+                .active-color();
+            }
+        }
+
+        &:not(:hover) [role="option"].aui-select-active {
+            .active-color();
+        }
+    }
+
+    &.aui-layer {
+        height: auto;
+    }
+}
+
+form.aui aui-select,
+aui-select {
+    @select-trigger-padding-left: 6px;
+    @select-trigger-padding-right: 6px;
+    @select-trigger-arrow-width: 8px;
+    @select-trigger-width: @aui-button-border-width * 2 + @select-trigger-padding-left + @select-trigger-arrow-width + @select-trigger-padding-right;
+    @select-trigger-arrow-height: @select-trigger-arrow-width / 2;
+
+    display: inline-block;
+    position: relative;
+    max-width: @aui-form-field-width-default;
+    width: 100%;
+
+    &:not([resolved]) {
+        display: inline-block;
+        height: @aui-form-field-height;
+        width: 100%;
+        max-width: 250px;
+        vertical-align: bottom;
+    }
+
+    aui-option:not([resolved]) {
+        display: none;
+    }
+
+    input.aui-select-has-inline-image {
+        background-position: @aui-select-image-in-input-left @aui-select-image-in-input-top;
+        background-repeat: no-repeat;
+        background-size: @aui-select-image-size;
+        padding-left: @aui-select-image-size + @aui-select-image-in-input-left + @aui-select-image-in-input-right;
+    }
+
+    select,
+    datalist {
+        display: none;
+    }
+
+    input.text {
+        padding-right: @select-trigger-width;
+        max-width: 100%;
+    }
+
+    button.aui-button {
+        background-clip: padding-box;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        bottom: 0;
+        box-sizing: border-box;
+        display: inline-block;
+        height: @aui-form-field-height;
+        right: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        vertical-align: top;
+        width: @select-trigger-width;
+
+        &:not(:hover) {
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+        }
+
+        &:not([aria-busy]):before {
+            border: @select-trigger-arrow-width/2 solid transparent;
+            border-top-color: @aui-color-charcoal;
+            content: '';
+            left: ~'calc(50% - @{select-trigger-arrow-width}/2)';
+            position: absolute;
+            top: ~'calc(50% - @{select-trigger-arrow-height}/2)';
+        }
+    }
+}
+
+//Form notification + single select
+form.aui {
+    aui-select {
+        &[data-aui-notification-error] .text {
+            border-color: @aui-notification-error-color;
+        }
+
+        &[data-aui-notification-success] .text {
+            border-color: @aui-notification-success-color;
+        }
+    }
+}

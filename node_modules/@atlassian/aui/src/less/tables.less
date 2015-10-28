@@ -1,0 +1,87 @@
+@import './imports/global';
+
+/*! AUI Tables */
+/* Note child combinators are used to ensure nested non-AUI tables don't receive any AUI styles. */
+
+@aui-border-tables: @aui-border-width @aui-border-type @aui-border-color;
+
+table.aui {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.aui table.aui {
+    margin: 0;
+}
+table.aui > caption {
+    color: @aui-table-caption-text-color;
+    background: @aui-table-caption-bg-color;
+    border-bottom: @aui-border-tables;
+    caption-side: top;
+    padding: @aui-table-padding-y @aui-table-padding-x;
+    text-align: @aui-table-text-align;
+}
+table.aui > tbody > tr,
+table.aui > tfoot > tr {
+    background: @aui-table-row-bg-color;
+    border-bottom: @aui-border-tables;
+    color: @aui-table-row-text-color;
+}
+
+table.aui > tbody > tr > th {
+    background: @aui-table-header-bg-color;
+    color: @aui-table-heading-text-color;
+}
+table.aui > thead > tr > th,
+table.aui > tbody > tr > th,
+table.aui > thead > tr > td,
+table.aui > tbody > tr > td,
+table.aui > tfoot > tr > td {
+    padding: @aui-table-padding-y @aui-table-padding-x;
+    text-align: @aui-table-text-align;
+    vertical-align: @aui-table-vertical-align;
+}
+table.aui > thead {
+    border-bottom: @aui-border-tables;
+}
+table.aui > tbody > tr:first-child > td,
+table.aui > tbody > tr:first-child > th,
+table.aui > tfoot > tr:first-child > td {
+    border-top: @aui-border-tables;
+}
+table.aui > thead > tr > th > ul.menu,
+table.aui > tbody > tr > th > ul.menu,
+table.aui > tbody > tr > td > ul.menu,
+table.aui > tfoot > tr > td > ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+table.aui > thead > tr > th > ul.menu > li,
+table.aui > tbody > tr > th > ul.menu > li,
+table.aui > tbody > tr > td > ul.menu > li,
+table.aui > tfoot > tr > td > ul.menu > li {
+  float: left;
+  margin: 0 10px 0 0;
+  width: auto;
+}
+
+/* Interactive Tables */
+
+table.aui.aui-table-interactive > tbody > tr:hover {
+    background: @aui-table-interactive-row-hover-bg-color;
+}
+
+/* End Interactive Tables */
+
+/* stripes - deprecated */
+table.aui.aui-zebra tr {
+    border-bottom: 0;
+}
+table.aui.aui-zebra > thead > tr:nth-child(even),
+table.aui.aui-zebra > tbody > tr:nth-child(even),
+table.aui.aui-zebra > tfoot > tr:nth-child(even),
+table.aui-zebra > tbody > tr:nth-child(even) > th {
+    background: @aui-table-zebra-even-bg-color;
+    color: @aui-table-zebra-even-text-color;
+}

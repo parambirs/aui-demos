@@ -1,0 +1,55 @@
+@import './imports/global';
+
+@aui-flag-vertical-padding: 20px;
+@aui-flag-fade-in-time: 0.2s;
+@aui-flag-slide-in-time: 0.5s;
+@aui-flag-fade-out-time: 0.8s;
+@aui-flag-slide-out-time: 1s;
+@aui-flag-stack-shrink-time: 0.5s;
+@aui-flag-stack-shrink-delay: 0.5s;
+
+#aui-flag-container {
+    position: fixed;
+    top: 71px;
+    right: 30px;
+    z-index: 4000;
+}
+
+.aui-flag {
+    left: 0;
+    max-height: 300px; //We need to set an explicit value to be able to animate the property
+    opacity: 0;
+    position: relative;
+    top: -10px;
+    transition: opacity @aui-flag-fade-in-time,
+                top @aui-flag-slide-in-time;
+
+    &[aria-hidden="true"] {
+        left: 300px;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        top: 0;
+        transition: max-height @aui-flag-stack-shrink-time @aui-flag-stack-shrink-delay,
+                    opacity @aui-flag-fade-out-time,
+                    left @aui-flag-slide-out-time;
+    }
+
+    &[aria-hidden="false"] {
+        opacity: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .aui-message {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        margin-bottom: @aui-flag-vertical-padding;
+        border-top-width: @aui-flag-border-top-width;
+        border-right-width: @aui-flag-border-right-width;
+        border-bottom-width: @aui-flag-border-bottom-width;
+        border-left-width: @aui-flag-border-left-width;
+        border-radius: @aui-flag-border-radius;
+        width: 300px;
+    }
+
+}
