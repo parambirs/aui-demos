@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+  <title>Three Column Layout</title>
+  <!--  AUI Core -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui.js"></script>
+  <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.19/css/aui.css" media="all">
+
+  <!-- AUI Experimental components -->
+  <!-- <script src="//cdn.rawgit.com/jrburke/almond/0.3.0/almond.js"></script> -->
+  <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui-experimental.css" media="all">
+  <script src="//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-experimental.js"></script>
+
+  <!-- AUI Datepicker and Soy templates -->
+  <script src="//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-datepicker.js"></script>
+  <script src="//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-soy.js"></script>
+</head>
+
+
+  <body class="aui-page">
+<div id="page">
+  <header id="header" role="banner">
+    <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+      <div class="aui-header-inner">
+        <div class="aui-header-primary">
+          <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
+            <a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a>
+          </h1>
+          <ul class="aui-nav">
+            <li><a href="http://example.com/">Nav 1</a></li>
+            <li><a href="http://example.com/">Nav 2</a></li>
+          </ul>
+        </div>
+        <div class="aui-header-secondary">
+          <ul class="aui-nav">
+            <li><a href="http://example.com/">Nav (s) 1</a></li>
+            <li><a href="http://example.com/">Nav (s) 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section id="content" role="main">
+    <header class="aui-page-header">
+      <div class="aui-page-header-inner">
+        <div class="aui-page-header-main">
+          <h1>Three Column Layout</h1>
+        </div>
+      </div>
+    </header>
+    <nav class="aui-navgroup aui-navgroup-horizontal">
+      <div class="aui-navgroup-inner">
+        <div class="aui-navgroup-primary">
+          <ul class="aui-nav">
+            <li><a href="http://example.com"/>Primary Nav item 1</a></li>
+            <li><a href="http://example.com"/>Primary Nav item 2</a></li>
+            <li><a href="http://example.com"/>Primary Nav item 3</a></li>
+          </ul>
+        </div>
+        <div class="aui-navgroup-secondary">
+          <ul class="aui-nav">
+            <li><a href="http://example.com/">Secondary Nav item 1</a></li>
+            <li><a href="http://example.com/">Secondary Nav item 1</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="aui-page-panel">
+        <div class="aui-page-panel-inner">
+            <div class="aui-page-panel-nav">
+                <!-- content such as a vertical nav -->
+                <nav class="aui-navgroup aui-navgroup-vertical">
+                  <div class="aui-navgroup-inner">
+                      <ul class="aui-nav __skate">
+                          <li class="aui-nav-selected"><a href="http://example.com/">Selected Nav Item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                      </ul>
+                      <ul class="aui-nav __skate">
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                      </ul>
+                      <ul class="aui-nav __skate">
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                      </ul>
+                      <div class="aui-nav-heading"><strong>Heading</strong>
+                      </div>
+                      <ul class="aui-nav __skate">
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>
+            </div>
+            <section class="aui-page-panel-content">
+                <!-- main area for content -->
+                <h2>Page content heading</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <h2>Sidebar, content and aside</h2>
+                <p>The sidebar, content and aside layout is a combination of the three layouts mentioned above. This layout can be used when a Vertical navigation is required as well as a two column structure in the content area.</p>
+            </section>
+            <aside class="aui-page-panel-sidebar">
+                <!-- tangental content here -->
+                <ul class="aui-nav">
+                  <li>
+                      <a class="aui-nav-item" href="#" title="This is a really really long title for whatever this is">
+                          <span class="aui-badge">999</span>
+                          <span class="aui-icon aui-icon-small aui-iconfont-jira">Alternative Text</span>
+                          <span class="aui-nav-item-label">Issues</span>
+                      </a>
+                  </li>
+              </ul>
+            </aside>
+        </div>
+    </div>
+</section>
+  <footer id="footer" role="contentinfo">
+    <section class="footer-body">
+      <ul>
+        <li>I ♥ AUI</li>
+      </ul>
+      <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
+    </section>
+  </footer>
+</div>
+</body>
+
+  
+</html>

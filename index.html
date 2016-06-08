@@ -1,148 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
-      <title>AUI Demo</title>
-      <!--  AUI Core -->
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui.js"></script>
-      <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui.css" media="all">
+---
+layout: default
+---
 
-      <!-- AUI Experimental components -->
-      <script src="//cdn.rawgit.com/jrburke/almond/0.3.0/almond.js"></script>
-      <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui-experimental.css" media="all">
-      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui-experimental.js"></script>
-
-      <!-- AUI Datepicker and Soy templates -->
-      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui-datepicker.js"></script>
-      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui-soy.js"></script>
-    </head>
-    <body class="aui-page-fixed">
-    <div id="page">
-      <header id="header" role="banner">
-        <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
-          <div class="aui-header-inner">
-            <div class="aui-header-primary">
-              <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
-                <a href="https://docs.atlassian.com/aui/latest/" target="_new"><span class="aui-header-logo-device">AUI</span></a>
-              </h1>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <section id="content" role="main">
-        <header class="aui-page-header">
-          <div class="aui-page-header-inner">
-            <div class="aui-page-header-main">
-              <h1>AUI Demos</h1>
-            </div>
-          </div>
-        </header>
-        <div class="aui-page-panel">
-            <div class="aui-page-panel-inner">
-                <div class="aui-page-panel-nav">
-                    <!-- content such as a vertical nav -->
-                    <nav class="aui-navgroup aui-navgroup-vertical">
-                      <div class="aui-navgroup-inner">
-                          <div class="aui-nav-heading"><strong>Page Layouts</strong></div>
-                          <ul class="aui-nav __skate">
-                              <li><a href="#">Page structure</a>
-                              </li>
-                              <li><a href="#">Content layout</a>
-                              </li>
-                              <li><a href="#">Page header</a>
-                              </li>
-                          </ul>
-                          <ul class="aui-nav __skate">
-                              <li><a href="#">Nav item</a>
-                              </li>
-                              <li><a href="#">Nav item</a>
-                              </li>
-                          </ul>
-                          <ul class="aui-nav __skate">
-                              <li><a href="#">Nav item</a>
-                              </li>
-                              <li><a href="#">Nav item</a>
-                              </li>
-                          </ul>
-                          <div class="aui-nav-heading"><strong>UI Components</strong>
-                          </div>
-                          <ul class="aui-nav __skate">
-                              <li><a href="#">AUI Select2</a>
-                              </li>
-                              <li><a href="#">Nav item</a>
-                              </li>
-                              <li><a href="#">Nav item</a>
-                              </li>
-                              <li><a href="#">Nav item</a>
-                              </li>
-                          </ul>
-                      </div>
-                  </nav>
-                </div>
-                <section class="aui-page-panel-content">
-                    <!-- main area for content -->
-                    <h2>Page structure</h2>
-                    <ul>
-                      <li><a href="page/page-default.html">Default page layout</a></li>
-                      <li><a href="page/page-fixed.html">Fixed page layout</a></li>
-                      <li><a href="page/page-hybrid.html">Hybrid page layout</a></li>
-                      <li><a href="page/page-focused.html">Focused page layout (default size)</a>
-                      <ul>
-                        <li><a href="page/page-focused-small.html">Focused page layout (small)</a>
-                        <li><a href="page/page-focused-medium.html">Focused page layout (medium)</a>
-                        <li><a href="page/page-focused-large.html">Focused page layout (large)</a>
-                        <li><a href="page/page-focused-xlarge.html">Focused page layout (xlarge)</a>
-                      </ul>
-                      </li>
-                      <li><a href="page/page-notification.html">Notification page layout (default size)</a>
-                      <ul>
-                        <li><a href="page/page-notification-small.html">Notification page layout (small)</a>
-                        <li><a href="page/page-notification-medium.html">Notification page layout (medium)</a>
-                        <li><a href="page/page-notification-large.html">Notification page layout (large)</a>
-                        <li><a href="page/page-notification-xlarge.html">Notification page layout (xlarge)</a>
-                      </ul>
-                      </li>
-                    </ul>
-
-                    <h2>Content layout</h2>
-                    <ul>
-                      <li><a href="content/content-only.html">Content only layout</a></li>
-                      <li><a href="content/content-3col.html">3-column layout</a></li>
-                      <li><a href="content/content-3col-fixed.html">3-column layout (fixed page)</a></li>
-                      <li><a href="content/content-2col.html">2-column layout (sidebar and content)</a></li>
-                      <li><a href="content/content-2col-fixed.html">2-column layout (sidebar and content) (fixed page)</a></li>
-                      <li><a href="content/content-2col-alt.html">2-column layout (content and aside)</a></li>
-                      <li><a href="content/content-2col-alt-fixed.html">2-column layout (content and aside) (fixed page)</a></li>
-                      <li><a href="content/content-generic.html">Generic layout</a></li>
-                    </ul>
-
-                    <h2>Page header</h2>
-                    <ul><li><a href="page/page-fixed-header.html">Page with a header (Fixed layout)</a></li></ul>
-
-                    <h2>UI components</h2>
-                    <ul>
-                      <li><a href="components/aui-select2.html">AUI Select2</a></li>
-                      <li><a href="components/aui-label.html">AUI Label</a></li>
-                      <li><a href="components/avatars.html">Avatars</a></li>
-                      <li><a href="components/badges.html">Badges</a></li>
-                      <li><a href="components/banners.html">Banners</a></li>
-                      <li><a href="components/buttons.html">Buttons</a></li>
-                      <li><a href="components/datepicker.html">Date Picker</a></li>
-                    </ul>
-                </section>
-            </div>
+<section id="content" role="main">
+    <header class="aui-page-header">
+      <div class="aui-page-header-inner">
+        <div class="aui-page-header-main">
+          <h1>AUI Demos</h1>
         </div>
-    </section>
-      <footer id="footer" role="contentinfo">
-        <section class="footer-body">
-          <ul>
-            <li>I ♥ AUI</li>
-          </ul>
-          <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
-        </section>
-      </footer>
+      </div>
+    </header>
+    <div class="aui-page-panel">
+        <div class="aui-page-panel-inner">
+            <div class="aui-page-panel-nav">
+                <!-- content such as a vertical nav -->
+                <nav class="aui-navgroup aui-navgroup-vertical">
+                  <div class="aui-navgroup-inner">
+                      <div class="aui-nav-heading"><strong>Page Layouts</strong></div>
+                      <ul class="aui-nav __skate">
+                          <li><a href="#">Page structure</a>
+                          </li>
+                          <li><a href="#">Content layout</a>
+                          </li>
+                          <li><a href="#">Page header</a>
+                          </li>
+                      </ul>
+                      <ul class="aui-nav __skate">
+                          <li><a href="#">Nav item</a>
+                          </li>
+                          <li><a href="#">Nav item</a>
+                          </li>
+                      </ul>
+                      <ul class="aui-nav __skate">
+                          <li><a href="#">Nav item</a>
+                          </li>
+                          <li><a href="#">Nav item</a>
+                          </li>
+                      </ul>
+                      <div class="aui-nav-heading"><strong>UI Components</strong>
+                      </div>
+                      <ul class="aui-nav __skate">
+                          <li><a href="#">AUI Select2</a>
+                          </li>
+                          <li><a href="#">Nav item</a>
+                          </li>
+                          <li><a href="#">Nav item</a>
+                          </li>
+                          <li><a href="#">Nav item</a>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>
+            </div>
+            <section class="aui-page-panel-content">
+                <!-- main area for content -->
+                <h2>Page structure</h2>
+                <ul>
+                  <li><a href="page/page-default.html">Default page layout</a></li>
+                  <li><a href="page/page-fixed.html">Fixed page layout</a></li>
+                  <li><a href="page/page-hybrid.html">Hybrid page layout</a></li>
+                  <li><a href="page/page-focused.html">Focused page layout (default size)</a>
+                  <ul>
+                    <li><a href="page/page-focused-small.html">Focused page layout (small)</a>
+                    <li><a href="page/page-focused-medium.html">Focused page layout (medium)</a>
+                    <li><a href="page/page-focused-large.html">Focused page layout (large)</a>
+                    <li><a href="page/page-focused-xlarge.html">Focused page layout (xlarge)</a>
+                  </ul>
+                  </li>
+                  <li><a href="page/page-notification.html">Notification page layout (default size)</a>
+                  <ul>
+                    <li><a href="page/page-notification-small.html">Notification page layout (small)</a>
+                    <li><a href="page/page-notification-medium.html">Notification page layout (medium)</a>
+                    <li><a href="page/page-notification-large.html">Notification page layout (large)</a>
+                    <li><a href="page/page-notification-xlarge.html">Notification page layout (xlarge)</a>
+                  </ul>
+                  </li>
+                </ul>
+
+                <h2>Content layout</h2>
+                <ul>
+                  <li><a href="content/content-only.html">Content only layout</a></li>
+                  <li><a href="content/content-3col.html">3-column layout</a></li>
+                  <li><a href="content/content-3col-fixed.html">3-column layout (fixed page)</a></li>
+                  <li><a href="content/content-2col.html">2-column layout (sidebar and content)</a></li>
+                  <li><a href="content/content-2col-fixed.html">2-column layout (sidebar and content) (fixed page)</a></li>
+                  <li><a href="content/content-2col-alt.html">2-column layout (content and aside)</a></li>
+                  <li><a href="content/content-2col-alt-fixed.html">2-column layout (content and aside) (fixed page)</a></li>
+                  <li><a href="content/content-generic.html">Generic layout</a></li>
+                </ul>
+
+                <h2>Page header</h2>
+                <ul><li><a href="page/page-fixed-header.html">Page with a header (Fixed layout)</a></li></ul>
+
+                <h2>UI components</h2>
+                <ul>
+                  <li><a href="components/aui-select2.html">AUI Select2</a></li>
+                  <li><a href="components/aui-label.html">AUI Label</a></li>
+                  <li><a href="components/avatars.html">Avatars</a></li>
+                  <li><a href="components/badges.html">Badges</a></li>
+                  <li><a href="components/buttons.html">Buttons</a></li>
+                  <li><a href="components/datepicker.html">Date Picker</a></li>
+                </ul>
+            </section>
+        </div>
     </div>
-    </body>
-</html>
+</section>
