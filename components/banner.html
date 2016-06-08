@@ -1,0 +1,27 @@
+---
+layout: components
+title: Banner
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Banners appear at the very top of the screen, above the application header,
+    and are reserved for system-level messaging about loss of data or functionality.
+  </p>
+
+  <h3>Example</h3>
+  <header id="header" role="banner"></header>
+  <p>
+    Look at the top ^^^^^.
+  </p>
+
+  <script type="text/javascript">
+    require(['aui/banner'], function (banner) {
+      banner({
+        body: 'Your <stong>license has expired!</strong> There are two days ' +
+              'left to <a href="#">renew your license</a>.'
+      });
+    });
+  </script>
+</section>

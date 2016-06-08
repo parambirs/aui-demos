@@ -10,12 +10,15 @@ title: Date Picker
   </p>
 
   <h3>Example</h3>
-  <input class="aui-date-picker" id="demo-range-always" type="date" max="2015-10-30" min="1983-07-20" />
+  <input class="aui-date-picker" id="demo-range-always" type="date" max="2016-10-30" min="1983-07-20" />
 </section>
 
 <script type="text/javascript">
   AJS.$(document).ready(function() {
-    AJS.$("#demo-range-always").datePicker({'overrideBrowserDefault': true});
+    AJS.$("#demo-range-always").datePicker({
+      'overrideBrowserDefault': true,
+      'dateFormat': 'yy-mm-dd'
+    });
 
     AJS.$("#demo-range-always").on("change", function (e) {
       alert($('#demo-range-always').val());

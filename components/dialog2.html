@@ -1,0 +1,124 @@
+---
+layout: components
+title: Dialog2
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>Modal dialogs are used to get a response from a user or reveal critical information
+    that cannot be ignored.</p>
+  <p>Dialogs come in 4 different sizes: aui-dialog2-small | aui-dialog2-medium |
+  aui-dialog2-large | aui-dialog2-xlarge</p>
+
+  <h3>Example</h3>
+  <!-- Create a trigger which will be used by the JavaScript -->
+  <button id="dialog-show-button" class="aui-button">Show dialog</button>
+  <button id="warning-dialog-show-button" class="aui-button">Show warning dialog</button>
+
+  <!-- Render the dialog -->
+  <section role="dialog" id="demo-dialog" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true">
+    <!-- Dialog header -->
+    <header class="aui-dialog2-header">
+      <!-- The dialog's title -->
+      <h2 class="aui-dialog2-header-main">Always use sentence case</h2>
+      <!-- Actions to render on the right of the header -->
+      <div class="aui-dialog2-header-secondary">
+        <form class="aui" action="#">
+          <input id="demo-search" class="text" type="search" name="search">
+        </form>
+      </div>
+      <!-- Close icon -->
+      <a class="aui-dialog2-header-close">
+        <span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span>
+      </a>
+    </header>
+    <!-- Main dialog content -->
+    <div class="aui-dialog2-content">
+      <p>Hello, world!</p>
+    </div>
+    <!-- Dialog footer -->
+    <footer class="aui-dialog2-footer">
+      <!-- Actions to render on the right of the footer -->
+      <div class="aui-dialog2-footer-actions">
+        <button id="dialog-submit-button" class="aui-button aui-button-primary">OK</button>
+        <button id="dialog-next-button" class="aui-button">Next</button>
+        <button id="dialog-close-button" class="aui-button aui-button-link">Close</button>
+      </div>
+      <!-- Hint text is rendered on the left of the footer -->
+      <div class="aui-dialog2-footer-hint">this is a hint</div>
+    </footer>
+  </section>
+</section>
+
+<!-- Render the warning dialog -->
+<section role="dialog" id="demo-warning-dialog"
+        class="aui-layer aui-dialog2 aui-dialog2-small aui-dialog2-warning"
+        data-aui-modal="true" aria-hidden="true">
+  <!-- Dialog header -->
+  <header class="aui-dialog2-header">
+    <!-- The dialog's title -->
+    <h2 class="aui-dialog2-header-main">Always use sentence case</h2>
+    <!-- Close icon -->
+    <a class="aui-dialog2-header-close">
+      <span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span>
+    </a>
+  </header>
+  <!-- Main dialog content -->
+  <div class="aui-dialog2-content">
+    <p>Hello, world!</p>
+  </div>
+  <!-- Dialog footer -->
+  <footer class="aui-dialog2-footer">
+    <!-- Actions to render on the right of the footer -->
+    <div class="aui-dialog2-footer-actions">
+      <button id="warning-dialog-close-button" class="aui-button aui-button-link">Close</button>
+    </div>
+    <!-- Hint text is rendered on the left of the footer -->
+    <div class="aui-dialog2-footer-hint">this is a hint</div>
+  </footer>
+</section>
+
+<script type="text/javascript">
+  // Shows the dialog when the "Show dialog" button is clicked
+  AJS.$("#dialog-show-button").click(function() {
+    AJS.dialog2("#demo-dialog").show();
+  });
+
+  // Hides the dialog
+  AJS.$("#dialog-close-button").click(function(e) {
+    e.preventDefault();
+    AJS.dialog2("#demo-dialog").hide();
+  });
+
+  // Show event - this is triggered when the dialog is shown
+  AJS.dialog2("#demo-dialog").on("show", function() {
+    console.log("demo-dialog was shown");
+  });
+
+  // Hide event - this is triggered when the dialog is hidden
+  AJS.dialog2("#demo-dialog").on("hide", function() {
+    console.log("demo-dialog was hidden");
+  });
+
+  // Global show event - this is triggered when any dialog is shown
+  AJS.dialog2.on("show", function() {
+    console.log("a dialog was shown");
+  });
+
+  // Global hide event - this is triggered when any dialog is hidden
+  AJS.dialog2.on("hide", function() {
+    console.log("a dialog was hidden");
+  });
+
+  // Shows the warning dialog when the "Show warning dialog" button is clicked
+  AJS.$("#warning-dialog-show-button").click(function () {
+      AJS.dialog2("#demo-warning-dialog").show();
+  });
+
+  // Hides the warning dialog
+  AJS.$("#warning-dialog-close-button").click(function (e) {
+      e.preventDefault();
+      AJS.dialog2("#demo-warning-dialog").hide();
+  });
+</script>
+</section>

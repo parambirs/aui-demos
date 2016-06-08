@@ -14,9 +14,9 @@ title: Buttons
 
   <h3>Examples</h3>
 
-  <p><button class="aui-button">Button</button></p>
-  <p><button class="aui-button aui-button-primary">Primary button</button></p>
-  <p><button class="aui-button aui-button-link">Link button</button></p>
+  <p><button class="aui-button" onclick="alert('Button clicked.')">Button</button></p>
+  <p><button class="aui-button aui-button-primary" onclick="alert('Primary button clicked.')">Primary button</button></p>
+  <p><button class="aui-button aui-button-link" onclick="alert('Link button clicked.')">Link button</button></p>
   <p><button class="aui-button aui-dropdown2-trigger" aria-controls="dropdown2-more">Dropdown button</button>
   <div id="dropdown2-more" class="aui-dropdown2 aui-style-default">
     <ul>
@@ -26,9 +26,10 @@ title: Buttons
     </ul>
   </div>
   </p>
-  <p><button class="aui-button"><span class="aui-icon aui-icon-small aui-iconfont-view"></span> Icon button</button></p>
-  <p><button class="aui-button" aria-disabled="true">Disabled button</button></p>
-  <p><button class="aui-button aui-button-subtle">
+  <p><button class="aui-button" onclick="alert('Icon button clicked.')">
+    <span class="aui-icon aui-icon-small aui-iconfont-view"></span> Icon button</button></p>
+  <p><button class="aui-button" aria-disabled="true" onclick="alert('Oops!!! I shouldn\'t be clickable.')">Disabled button</button></p>
+  <p><button class="aui-button aui-button-subtle" onclick="alert('Subtle button clicked.')">
     <span class="aui-icon aui-icon-small aui-iconfont-configure"></span>
     Subtle button
     </button>
@@ -50,9 +51,9 @@ title: Buttons
   </p>
   <p>
     <div class="aui-buttons">
-      <button class="aui-button">Button</button>
-      <button class="aui-button">Button</button>
-      <button class="aui-button">Button</button>
+      <button class="aui-button" onclick="alert('Button 1 clicked.')">Button</button>
+      <button class="aui-button" onclick="alert('Button 2 clicked.')">Button</button>
+      <button class="aui-button" onclick="alert('Button 3 clicked.')">Button</button>
     </div>
   </p>
 </section>
