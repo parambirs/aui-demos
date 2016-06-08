@@ -1,124 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
-      <title>AUI - Content (2 Col)</title>
-      <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui.css" media="all">
-      <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui-experimental.css" media="all">
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
-      <script src="../js/require.js"></script>
-      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui.js"></script>
-      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui-experimental.js"></script>
-    </head>
-    <body class="aui-page">
-    <div id="page">
-      <header id="header" role="banner">
-        <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
-          <div class="aui-header-inner">
-            <div class="aui-header-primary">
-              <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
-                <a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a>
-              </h1>
-              <ul class="aui-nav">
-                <li><a href="http://example.com/">Nav 1</a></li>
-                <li><a href="http://example.com/">Nav 2</a></li>
-              </ul>
-            </div>
-            <div class="aui-header-secondary">
-              <ul class="aui-nav">
-                <li><a href="http://example.com/">Nav (s) 1</a></li>
-                <li><a href="http://example.com/">Nav (s) 2</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <section id="content" role="main">
-        <header class="aui-page-header">
-          <div class="aui-page-header-inner">
-            <div class="aui-page-header-main">
-              <h1>Two Column Layout</h1>
-            </div>
-          </div>
-        </header>
-        <nav class="aui-navgroup aui-navgroup-horizontal">
-          <div class="aui-navgroup-inner">
-            <div class="aui-navgroup-primary">
-              <ul class="aui-nav">
-                <li><a href="http://example.com"/>Primary Nav item 1</a></li>
-                <li><a href="http://example.com"/>Primary Nav item 2</a></li>
-                <li><a href="http://example.com"/>Primary Nav item 3</a></li>
-              </ul>
-            </div>
-            <div class="aui-navgroup-secondary">
-              <ul class="aui-nav">
-                <li><a href="http://example.com/">Secondary Nav item 1</a></li>
-                <li><a href="http://example.com/">Secondary Nav item 1</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div class="aui-page-panel">
-            <div class="aui-page-panel-inner">
-                <div class="aui-page-panel-nav">
-                    <!-- content such as a vertical nav -->
-                    <nav class="aui-navgroup aui-navgroup-vertical">
-                      <div class="aui-navgroup-inner">
-                          <ul class="aui-nav __skate">
-                              <li class="aui-nav-selected"><a href="http://example.com/">Selected Nav Item</a>
-                              </li>
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                          </ul>
-                          <ul class="aui-nav __skate">
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                          </ul>
-                          <ul class="aui-nav __skate">
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                          </ul>
-                          <div class="aui-nav-heading"><strong>Heading</strong>
-                          </div>
-                          <ul class="aui-nav __skate">
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                              <li><a href="http://example.com/">Nav item</a>
-                              </li>
-                          </ul>
-                      </div>
-                  </nav>
-                </div>
-                <section class="aui-page-panel-content">
-                    <!-- main area for content -->
-                    <h2>Page content heading</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+---
+layout: page
+title: Two Column Layout
+---
 
-                    <h2>Sidebar and content</h2>
-                    <p>The sidebar and content layout has a column for vertical navigation to the left of the content area, which is useful for when a long list of navigation links is necessary. See Vertical navigation and Horizontal navigation for more detail. </p>
-                </section>
-            </div>
-        </div>
-    </section>
-      <footer id="footer" role="contentinfo">
-        <section class="footer-body">
-          <ul>
-            <li>I ♥ AUI</li>
+<body class="aui-page">
+<div id="page">
+  <header id="header" role="banner">
+    <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+      <div class="aui-header-inner">
+        <div class="aui-header-primary">
+          <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
+            <a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a>
+          </h1>
+          <ul class="aui-nav">
+            <li><a href="http://example.com/">Nav 1</a></li>
+            <li><a href="http://example.com/">Nav 2</a></li>
           </ul>
-          <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
-        </section>
-      </footer>
+        </div>
+        <div class="aui-header-secondary">
+          <ul class="aui-nav">
+            <li><a href="http://example.com/">Nav (s) 1</a></li>
+            <li><a href="http://example.com/">Nav (s) 2</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <section id="content" role="main">
+    <header class="aui-page-header">
+      <div class="aui-page-header-inner">
+        <div class="aui-page-header-main">
+          <h1>Two Column Layout</h1>
+        </div>
+      </div>
+    </header>
+    <nav class="aui-navgroup aui-navgroup-horizontal">
+      <div class="aui-navgroup-inner">
+        <div class="aui-navgroup-primary">
+          <ul class="aui-nav">
+            <li><a href="http://example.com"/>Primary Nav item 1</a></li>
+            <li><a href="http://example.com"/>Primary Nav item 2</a></li>
+            <li><a href="http://example.com"/>Primary Nav item 3</a></li>
+          </ul>
+        </div>
+        <div class="aui-navgroup-secondary">
+          <ul class="aui-nav">
+            <li><a href="http://example.com/">Secondary Nav item 1</a></li>
+            <li><a href="http://example.com/">Secondary Nav item 1</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="aui-page-panel">
+        <div class="aui-page-panel-inner">
+            <div class="aui-page-panel-nav">
+                <!-- content such as a vertical nav -->
+                <nav class="aui-navgroup aui-navgroup-vertical">
+                  <div class="aui-navgroup-inner">
+                      <ul class="aui-nav __skate">
+                          <li class="aui-nav-selected"><a href="http://example.com/">Selected Nav Item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                      </ul>
+                      <ul class="aui-nav __skate">
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                      </ul>
+                      <ul class="aui-nav __skate">
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                      </ul>
+                      <div class="aui-nav-heading"><strong>Heading</strong>
+                      </div>
+                      <ul class="aui-nav __skate">
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                          <li><a href="http://example.com/">Nav item</a>
+                          </li>
+                      </ul>
+                  </div>
+              </nav>
+            </div>
+            <section class="aui-page-panel-content">
+                <!-- main area for content -->
+                <h2>Page content heading</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                <h2>Sidebar and content</h2>
+                <p>The sidebar and content layout has a column for vertical navigation to the left of the content area, which is useful for when a long list of navigation links is necessary. See Vertical navigation and Horizontal navigation for more detail. </p>
+            </section>
+        </div>
     </div>
-    </body>
-</html>
+</section>
+  <footer id="footer" role="contentinfo">
+    <section class="footer-body">
+      <ul>
+        <li>I ♥ AUI</li>
+      </ul>
+      <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
+    </section>
+  </footer>
+</div>
+</body>

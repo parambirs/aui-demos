@@ -1,75 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
-      <title>AUI - Badges</title>
-      <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui.css" media="all">
-      <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.1/css/aui-experimental.css" media="all">
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
-      <script src="../js/require.js"></script>
-      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui.js"></script>
-      <script src="//aui-cdn.atlassian.com/aui-adg/5.9.1/js/aui-experimental.js"></script>
-    </head>
-    <body class="aui-page-fixed">
-    <div id="page">
-      <header id="header" role="banner">
-        <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
-          <div class="aui-header-inner">
-            <div class="aui-header-primary">
-              <h1 id="logo" class="aui-header-logo aui-header-logo-aui">
-                <a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a>
-              </h1>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <section id="content" role="main">
-        <header class="aui-page-header">
-          <div class="aui-page-header-inner">
-            <div class="aui-page-header-main">
-              <h1>Badges</h1>
-            </div>
-          </div>
-        </header>
-        <div class="aui-page-panel">
-          <div class="aui-page-panel-inner">
-            <section class="aui-page-panel-content">
-              <h2>Summary</h2>
-              <p>
-                Badges provide quick visual identification for numeric values such as tallies and other quantities. They are not used for anything other than integers. For statuses, use Lozenges. To call out tags or other high-visibility attributes, use Labels.
-              </p>
+---
+layout: components
+title: Badges
+---
 
-              <h3>Example</h3>
-              <aui-badge>19</aui-badge>
-              <aui-badge>1</aui-badge>
-              <aui-badge>119</aui-badge>
-              <aui-badge>1911</aui-badge>
-              <aui-badge>11999</aui-badge>
-              <aui-badge>0</aui-badge>
-            </section>
-          </div>
-        </div>
-      </section>
-      <footer id="footer" role="contentinfo">
-        <section class="footer-body">
-          <ul>
-            <li>I ♥ AUI</li>
-          </ul>
-          <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
-        </section>
-      </footer>
-    </div>
-    <script type="text/javascript">
-      $( document ).ready( function() {
-        AJS.$("#select2-example").auiSelect2();
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Badges provide quick visual identification for numeric values such as tallies and other quantities. They are not used for anything other than integers. For statuses, use Lozenges. To call out tags or other high-visibility attributes, use Labels.
+  </p>
 
-        $("#select2-example").on("change", function (e) { console.log($('#select2-example').val()); });
-
-        $("#btnShowSelected").click( function() {
-          alert($('#select2-example').val());
-        }); 
-      });
-    </script>
-    </body>
-</html>
+  <h3>Example</h3>
+  <aui-badge>19</aui-badge>
+  <aui-badge>1</aui-badge>
+  <aui-badge>119</aui-badge>
+  <aui-badge>1911</aui-badge>
+  <aui-badge>11999</aui-badge>
+  <aui-badge>0</aui-badge>
+</section>
