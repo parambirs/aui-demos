@@ -1,0 +1,89 @@
+---
+layout: components
+title: Dropdown2
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary - Incomplete</h2>
+  <p>
+  Dropdown2 creates a dropdown menu, with optional sections, headings, icons,
+  checkbox items, radio group items and disabled items. Submenus are supported
+  but should be avoided where possible for usability reasons.
+  </p>
+
+  <h3>Example</h3>
+
+  <h4>Simple dropdown</h4>
+
+  <p>
+    <!-- Trigger -->
+    <a href="#dwarfers" aria-owns="dwarfers" aria-haspopup="true"
+        class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
+
+    <!-- Dropdown -->
+    <div id="dwarfers" class="aui-style-default aui-dropdown2">
+      <ul class="aui-list-truncate">
+        <li><a href="#">Menu item</a></li>
+        <li><a href="#">Menu item</a></li>
+        <li><a href="#">Menu item</a></li>
+        <li><a href="#">Menu item</a></li>
+      </ul>
+    </div>
+  </p>
+
+  <h4>Dropdown2 trigger without an arrow</h4>
+  <p>
+    <!-- Trigger -->
+    <a href="#dwarfers2" aria-owns="dwarfers2" aria-haspopup="true"
+        class="aui-button aui-dropdown2-trigger aui-dropdown2-trigger-arrowless">Dropdown trigger</a>
+
+    <!-- Dropdown -->
+    <div id="dwarfers2" class="aui-style-default aui-dropdown2">
+      <ul class="aui-list-truncate">
+        <li><a href="#">Menu item</a></li>
+        <li><a href="#">Menu item</a></li>
+        <li><a href="#">Menu item</a></li>
+        <li><a href="#">Menu item</a></li>
+      </ul>
+    </div>
+  </p>
+
+  <h4>Dropdown with groups and headings</h4>
+  <p>
+    <!-- Trigger -->
+    <a href="#dwarfers3" aria-owns="dwarfers3" aria-haspopup="true"
+        class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
+
+    <!-- Dropdown -->
+    <div id="dwarfers3" class="aui-style-default aui-dropdown2">
+      <div class="aui-dropdown2-section">
+        <ul>
+          <li><a href="#">Red Dwarf</a></li>
+          <li><a href="#">Low Red Dwarf</a></li>
+          <li><a href="#">High Red Dwarf</a></li>
+          <li><a href="#">Nanobot Red Dwarf</a></li>
+        </ul>
+      </div>
+      <div class="aui-dropdown2-section">
+        <div class="aui-dropdown2-heading">
+          <strong>Support Ships</strong>
+        </div>
+        <ul>
+          <li><a href="#foo">Starbug</a></li>
+          <li><a href="#foo">Blue Midget</a></li>
+          <li><a href="#foo">White Giant</a></li>
+        </ul>
+      </div>
+      <div class="aui-dropdown2-section">
+        <div class="aui-dropdown2-heading">
+          <strong>Other Ships</strong>
+        </div>
+        <ul>
+          <li><a href="#foo">Wildfire</a></li>
+          <li><a href="#foo">SSS Esperanto</a></li>
+          <li><a href="#foo">Nova 5</a></li>
+        </ul>
+      </div>
+    </div>
+  </p>
+</section>

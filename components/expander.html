@@ -1,0 +1,60 @@
+---
+layout: components
+title: Expander
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+  Use this when you need to show users one or more small snippets of a larger
+  body of text in order to keep the user interface lightweight and scannable.
+  This pattern includes both revealing the rest of the text on the same screen,
+  and linking to another screen for the full text.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <h3>Regular expander</h3>
+
+    <div id="expander-with-replace-text-content" class="aui-expander-content">
+      What happens when you add a shiny new browser to a stack of already-disagreeing
+      citizens? You’ll inevitably find some bugs. This is the story of how we found
+      a rendering quirk and how the Atlassian frontend team found and refined the
+      fix. The problem The Atlassian User Interface (AUI) library has just finished
+      an IE10 sprint to get our library prepped and ready for the newest member
+      of the browser family. While IE10 seems generally quite good, we found a couple
+      of problems due to IE10 dropping conditional comments; plus some undesirable
+      behaviours.
+    </div>
+    <a id="replace-text-trigger" data-replace-text="Read less" class="aui-expander-trigger"
+        aria-controls="expander-with-replace-text-content">Read more</a>
+  </div>
+
+  <h4>Reveal text</h4>
+
+  <div class="aui-flatpack-example">
+    <div id="container">
+      <div id="reveal-text-content" class="aui-expander-content">
+        What happens when you add a shiny new browser to a stack of already-disagreeing
+        citizens? You’ll inevitably find some bugs. This is the story of how we found
+        a rendering quirk and how the Atlassian frontend team found and refined the
+        fix. The problem The Atlassian User Interface (AUI) library has just finished
+        an IE10 sprint to get our library prepped and ready for the newest member
+        of the browser family. While IE10 seems generally quite good, we found a couple
+        of problems due to IE10 dropping conditional comments; plus some undesirable
+        behaviours.
+        <a id="reveal-text-trigger" data-replace-text="Show less" data-replace-selector=".reveal-text-trigger-text"
+            class="aui-expander-trigger aui-expander-reveal-text" aria-controls="reveal-text-content">
+            <span class="reveal-text-trigger-text">Show more</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #reveal-text-content {
+    min-height: 1.5em;
+  }
+</style>

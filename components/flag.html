@@ -1,0 +1,97 @@
+---
+layout: components
+title: Flag
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+  Flags are the primary method for providing system feedback in the product user
+  interface. Messages include notifications of various kinds: alerts, confirmation,
+  notices, warnings, info and errors.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <button id="next-flag-show-button" class="aui-button">Show next flag</button>
+  </div>
+  <script>
+    AJS.$(document).ready(function() {
+      var messages = [
+        {
+          title: 'Backup stale',
+          type: 'info',
+          body: 'This JIRA instance was last backed up on Thursday, 18 September 2011.'
+        },
+        {
+          title: 'Success!',
+          type: 'success',
+          body: 'You have backed up your JIRA system to C:/backups/JIRA.90383.93483.xml.'
+        },
+        {
+          title: 'Destructive operation!',
+          type: 'error',
+          body: '<p>Attachments will not be backed up. This needs to be done manually.</p>' +
+                '<ul class="aui-nav-actions-list">' +
+                  '<li><a href="#">Why?</a></li>' +
+                  '<li><a href="#">Find out how</a></li>' +
+                '</ul>'
+        },
+        {
+          title: 'Backing up attachments',
+          type: 'warning',
+          body: 'Data import will wipe all existing JIRA content - make sure you backup first!'
+        },
+        {
+          title: 'Could not watch the page',
+          type: 'info',
+          body: '<p>I have actions</p>' +
+                '<ul class="aui-nav-actions-list">' +
+                    '<li><a href="#">Action 1</a></li>' +
+                    '<li><a href="#">Action 2</a></li>' +
+                    '<li><a href="#">Action 3</a></li>' +
+                '</ul>'
+        }
+      ];
+
+      AJS.$("#next-flag-show-button").click(function() {
+        AJS.flag(messages.shift());
+        if (!messages.length) {
+          AJS.$(this)
+              .html('No more flags to show!!')
+              .attr('disabled', true)
+              .attr('aria-disabled', true);
+        }
+      });
+    });
+  </script>
+
+  <div class="aui-flatpack-example">
+    <h4>Close flag programmatically</h4>
+    <p>
+      <button id="btn-create-flag" class="aui-button">Create flag</button>
+      <button id="btn-hide-flag" class="aui-button">Hide flag</button>
+    </p>
+  </div>
+
+  <script>
+    var flag;
+
+    AJS.$("#btn-create-flag").click(function() {
+      myFlag = AJS.flag({
+        type: 'info',
+        close: 'never',
+        title: 'Issue ADG-745 has been created.',
+        body: '<ul class="aui-nav-actions-list">' +
+                '<li><a href="#">View issue</a></li>' +
+                '<li><a href="#">Add to sprint</a></li>' +
+              '</ul>'
+      });
+    });
+
+    AJS.$('#btn-hide-flag').click(function() {
+      myFlag.close();
+    })
+  </script>
+</section>
