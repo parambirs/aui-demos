@@ -12,78 +12,185 @@ title: Dropdown2
   </p>
 
   <h3>Example</h3>
+  <div class="aui-flatpack-example">
+    <h4>Simple dropdown</h4>
 
-  <h4>Simple dropdown</h4>
+    <p>
+      <!-- Trigger -->
+      <a href="#dwarfers" aria-owns="dwarfers" aria-haspopup="true"
+          class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
 
-  <p>
-    <!-- Trigger -->
-    <a href="#dwarfers" aria-owns="dwarfers" aria-haspopup="true"
-        class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
-
-    <!-- Dropdown -->
-    <div id="dwarfers" class="aui-style-default aui-dropdown2">
-      <ul class="aui-list-truncate">
-        <li><a href="#">Menu item</a></li>
-        <li><a href="#">Menu item</a></li>
-        <li><a href="#">Menu item</a></li>
-        <li><a href="#">Menu item</a></li>
-      </ul>
-    </div>
-  </p>
-
-  <h4>Dropdown2 trigger without an arrow</h4>
-  <p>
-    <!-- Trigger -->
-    <a href="#dwarfers2" aria-owns="dwarfers2" aria-haspopup="true"
-        class="aui-button aui-dropdown2-trigger aui-dropdown2-trigger-arrowless">Dropdown trigger</a>
-
-    <!-- Dropdown -->
-    <div id="dwarfers2" class="aui-style-default aui-dropdown2">
-      <ul class="aui-list-truncate">
-        <li><a href="#">Menu item</a></li>
-        <li><a href="#">Menu item</a></li>
-        <li><a href="#">Menu item</a></li>
-        <li><a href="#">Menu item</a></li>
-      </ul>
-    </div>
-  </p>
-
-  <h4>Dropdown with groups and headings</h4>
-  <p>
-    <!-- Trigger -->
-    <a href="#dwarfers3" aria-owns="dwarfers3" aria-haspopup="true"
-        class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
-
-    <!-- Dropdown -->
-    <div id="dwarfers3" class="aui-style-default aui-dropdown2">
-      <div class="aui-dropdown2-section">
-        <ul>
-          <li><a href="#">Red Dwarf</a></li>
-          <li><a href="#">Low Red Dwarf</a></li>
-          <li><a href="#">High Red Dwarf</a></li>
-          <li><a href="#">Nanobot Red Dwarf</a></li>
+      <!-- Dropdown -->
+      <div id="dwarfers" class="aui-style-default aui-dropdown2">
+        <ul class="aui-list-truncate">
+          <li><a href="#">Menu item</a></li>
+          <li><a href="#">Menu item</a></li>
+          <li><a href="#">Menu item</a></li>
+          <li><a href="#">Menu item</a></li>
         </ul>
       </div>
-      <div class="aui-dropdown2-section">
-        <div class="aui-dropdown2-heading">
-          <strong>Support Ships</strong>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Dropdown2 trigger without an arrow</h4>
+    <p>
+      <!-- Trigger -->
+      <a href="#dwarfers2" aria-owns="dwarfers2" aria-haspopup="true"
+          class="aui-button aui-dropdown2-trigger aui-dropdown2-trigger-arrowless">Dropdown trigger</a>
+
+      <!-- Dropdown -->
+      <div id="dwarfers2" class="aui-style-default aui-dropdown2">
+        <ul class="aui-list-truncate">
+          <li><a href="#">Menu item</a></li>
+          <li><a href="#">Menu item</a></li>
+          <li><a href="#">Menu item</a></li>
+          <li><a href="#">Menu item</a></li>
+        </ul>
+      </div>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Dropdown with groups and headings</h4>
+    <p>
+      <!-- Trigger -->
+      <a href="#dwarfers3" aria-owns="dwarfers3" aria-haspopup="true"
+          class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
+
+      <!-- Dropdown -->
+      <div id="dwarfers3" class="aui-style-default aui-dropdown2">
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li><a href="#">Red Dwarf</a></li>
+            <li><a href="#">Low Red Dwarf</a></li>
+            <li><a href="#">High Red Dwarf</a></li>
+            <li><a href="#">Nanobot Red Dwarf</a></li>
+          </ul>
         </div>
-        <ul>
-          <li><a href="#foo">Starbug</a></li>
-          <li><a href="#foo">Blue Midget</a></li>
-          <li><a href="#foo">White Giant</a></li>
-        </ul>
-      </div>
-      <div class="aui-dropdown2-section">
-        <div class="aui-dropdown2-heading">
-          <strong>Other Ships</strong>
+        <div class="aui-dropdown2-section">
+          <div class="aui-dropdown2-heading">
+            <strong>Support Ships</strong>
+          </div>
+          <ul>
+            <li><a href="#foo">Starbug</a></li>
+            <li><a href="#foo">Blue Midget</a></li>
+            <li><a href="#foo">White Giant</a></li>
+          </ul>
         </div>
-        <ul>
-          <li><a href="#foo">Wildfire</a></li>
-          <li><a href="#foo">SSS Esperanto</a></li>
-          <li><a href="#foo">Nova 5</a></li>
+        <div class="aui-dropdown2-section">
+          <div class="aui-dropdown2-heading">
+            <strong>Other Ships</strong>
+          </div>
+          <ul>
+            <li><a href="#foo">Wildfire</a></li>
+            <li><a href="#foo">SSS Esperanto</a></li>
+            <li><a href="#foo">Nova 5</a></li>
+          </ul>
+        </div>
+      </div>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Dropdown width and truncation</h4>
+    <p>
+      <!-- Trigger -->
+      <a href="#custom-width-example-trigger" aria-owns="custom-width-example" aria-haspopup="true"
+          class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
+
+      <!-- Dropdown -->
+      <div id="custom-width-example" class="aui-style-default aui-dropdown2">
+        <ul class="aui-list-truncate">
+          <li><a href="#short">Short label</a></li>
+          <li><a href="#long">Especially long label that contains enough text to
+                feed a walrus and also to cause this list item to flow over multiple lines</a></li>
         </ul>
       </div>
-    </div>
-  </p>
+    </p>
+    <style>
+      #custom-width-example {
+        min-width: 240px;
+        max-width: 480px;
+      }
+    </style>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Dropdown with icons</h4>
+    <p>
+      <!-- Trigger -->
+      <a href="#dropdown2-icons-wrap-trigger" aria-owns="dropdown2-icons-wrap" aria-haspopup="true"
+          class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
+
+      <!-- Dropdown -->
+      <div id="dropdown2-icons-wrap" class="aui-style-default aui-dropdown2">
+        <ul>
+          <li>
+            <a href="#" class="aui-icon-container">
+              <span class="aui-icon aui-icon-small aui-iconfont-blogroll-large">Alt text</span>
+            Icon span pattern</a>
+          </li>
+          <li>
+            <a href="#" class="aui-icon-container">
+              <img src="/images/angry.png" alt="Alt text"> Icon as IMG element
+            </a>
+          </li>
+          <li>
+            <a href="#" class="aui-icon-container icon-example">Icon as bg image</a>
+          </li>
+        </ul>
+      </div>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Disabled dropdowns</h4>
+    <p>
+      <!-- Trigger -->
+      <a href="#" aria-owns="#" aria-haspopup="true" aria-disabled="true"
+          class="aui-button aui-style-default aui-dropdown2-trigger">Make me a sandwich</a>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Disabled dropdown items</h4>
+
+    <p>
+      <!-- Trigger -->
+      <a href="#dropdown2-disabled-items-trigger" aria-owns="dropdown2-disabled-items-trigger" aria-haspopup="true"
+          class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
+
+      <!-- Dropdown -->
+      <div id="dropdown2-disabled-items-trigger" class="aui-style-default aui-dropdown2">
+        <ul>
+          <li><a href="#">Attach file</a></li>
+          <li><a href="#">Comment</a></li>
+          <li><a class="disabled" title="You don't have permission to edit this issue.">Edit issue</a></li>
+          <li><a href="#">Watch issue</a></li>
+        </ul>
+      </div>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Checkboxes, Radio Groups, Interactive Items</h4>
+
+    <p>
+      <!-- Trigger -->
+      <a href="#dropdown2-disabled-items-trigger" aria-owns="dropdown2-disabled-items-trigger" aria-haspopup="true"
+          class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
+
+      <!-- Dropdown -->
+      <div id="dropdown2-disabled-items-trigger" class="aui-style-default aui-dropdown2">
+        <ul>
+          <li><a href="#">Attach file</a></li>
+          <li><a href="#">Comment</a></li>
+          <li><a class="disabled" title="You don't have permission to edit this issue.">Edit issue</a></li>
+          <li><a href="#">Watch issue</a></li>
+        </ul>
+      </div>
+    </p>
+  </div>
+
 </section>
