@@ -1,0 +1,188 @@
+---
+layout: components
+title: Form validation
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Form validation is used to provide an interface for validating form fields,
+    and displaying feedback on problems.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <h4>Field length validation</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-message-length">Input with minlength validation</label>
+        <input id="demo-message-length" class="text" type="text"
+            data-aui-validation-field minlength="5">
+      </div>
+      <div class="field-group">
+        <label for="demo-message-length2">Input with maxlength validation</label>
+        <input id="demo-message-length2" class="text" type="text"
+            data-aui-validation-field maxlength="5">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>matchingfield validation</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-message-main">Enter text</label>
+        <input id="demo-message-main" class="text" type="text">
+      </div>
+      <div class="field-group">
+        <label for="demo-message-copy">Enter text again</label>
+        <input id="demo-message-copy" class="text" type="text"
+            data-aui-validation-field data-aui-validation-matchingfield="demo-message-main">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Field doesnotcontain validation</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-message-doesnotcontain">Input with doesnotcontain validation</label>
+        <input id="demo-message-doesnotcontain" class="text" type="text"
+            data-aui-validation-field data-aui-validation-doesnotcontain="abc">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Field regex validation</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-message-pattern">Input with regex pattern validation</label>
+        <input id="demo-message-pattern" class="text" type="text"
+            data-aui-validation-field data-aui-validation-pattern="[0-9a-f]*">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Required field</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-message-required">Required input</label>
+        <input id="demo-message-required" class="text" type="text"
+            data-aui-validation-field required>
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Field numeric value validation</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-message-min">Input with min validation</label>
+        <input id="demo-message-min" class="text" type="number"
+            data-aui-validation-field min="5">
+      </div>
+      <div class="field-group">
+        <label for="demo-message-minmax">Input with min and validation</label>
+        <input id="demo-message-minmax" class="text" type="number"
+            data-aui-validation-field min="1" max="5">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Date format validation</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-message-dateformat">Date</label>
+        <input id="demo-message-dateformat" class="text" type="text"
+            data-aui-validation-field data-aui-validation-dateformat="Y/m-d">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Checkbox checked validations</h4>
+    <p>
+      <form class="aui">
+        <fieldset class="group" data-aui-validation-field
+            data-aui-validation-minchecked="1" data-aui-validation-maxchecked="2">
+          <legend><span>Description of the set of checkboxes</span></legend>
+          <div class="checkbox">
+            <input class="checkbox" type="checkbox" name="checkBoxOne" id="checkBoxOne">
+            <label for="checkBoxOne">Receive email</label>
+          </div>
+          <div class="checkbox">
+            <input class="checkbox" type="checkbox" name="checkBoxTwo" id="checkBoxTwo">
+            <label for="checkBoxTwo">Receive push notification</label>
+          </div>
+          <div class="checkbox">
+            <input class="checkbox" type="checkbox" name="checkBoxThree" id="checkBoxThree">
+            <label for="checkBoxThree">Receive in-app notification</label>
+          </div>
+        </fieldset>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Custom validation messages</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-message-custom">Text</label>
+        <input id="demo-message-custom" class="text" type="text"
+            data-aui-validation-field
+            data-aui-validation-pattern="http://www\..+\.com"
+            data-aui-validation-pattern-msg="{0} is not a valid URL">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Intercept form submission</h4>
+    <form class="aui" id="valid-submit-form">
+      <div class="field-group">
+        <input id="input-one" class="text" type="text"
+            data-aui-validation-field data-aui-validation-required="required">
+      </div>
+      <div class="field-group">
+        <input id="input-two" class="text" type="number"
+            data-aui-validation-field data-aui-validation-max="10">
+      </div>
+      <div class="field-group">
+        <button class="aui-button" type="submit">Submit</button>
+      </div>
+    </form>
+
+    <script>
+      AJS.$('#valid-submit-form').on('aui-valid-submit', function(event) {
+        alert('Data saved');
+        event.preventDefault();
+      });
+    </script>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Plugin validators</h4>
+    <script>
+      // Register a plugin validator that ensures an input field must start with
+      // a certain sequence of characters.
+      AJS.formValidation.register(['startswith'], function(field) {
+        if (field.el.value.indexOf(field.args('startswith')) !== 0) {
+          field.invalidate(AJS.format('Input must start with {0}', field.args('startswith')));
+        } else {
+          field.validate();
+        }
+      });
+    </script>
+    <form class="aui">
+      <div class="field-group">
+        <input class="text" type="text"
+            data-aui-validation-field data-aui-validation-startswith="foo">
+      </div>
+    </form>
+  </div>
+
+</section>

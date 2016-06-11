@@ -1,0 +1,48 @@
+---
+layout: components
+title: Form notifications
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Form validation is used to provide an interface for validating form fields,
+    and displaying feedback on problems.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <h4>Info fields</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-info-message">Input with an info notification</label>
+        <input id="demo-info-message" class="text" type="text"
+            data-aui-notification-field data-aui-notification-info="Choose a username at least 6 characters long">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Error messages</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-info-message">Input with an error notification</label>
+        <input id="demo-info-message" class="text" type="text" data-aui-notification-field
+            data-aui-notification-error="There is a problem with this field">
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Stacked messages</h4>
+    <form class="aui">
+      <div class="field-group">
+        <label for="demo-info-message">Input with multiple error notifications</label>
+        <input id="demo-info-message" class="text" type="text" data-aui-notification-field
+            data-aui-notification-error='["This field has a problem", "In fact, it has two problems"]'>
+      </div>
+    </form>
+  </div>
+
+</section>

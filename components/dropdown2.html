@@ -178,19 +178,38 @@ title: Dropdown2
 
     <p>
       <!-- Trigger -->
-      <a href="#dropdown2-disabled-items-trigger" aria-owns="dropdown2-disabled-items-trigger" aria-haspopup="true"
+      <a href="#dropdown2-checkbox-radio-interactive-trigger" aria-owns="dropdown2-checkbox-radio-interactive" aria-haspopup="true"
           class="aui-button aui-style-default aui-dropdown2-trigger">Dropdown trigger</a>
 
       <!-- Dropdown -->
-      <div id="dropdown2-disabled-items-trigger" class="aui-style-default aui-dropdown2">
-        <ul>
-          <li><a href="#">Attach file</a></li>
-          <li><a href="#">Comment</a></li>
-          <li><a class="disabled" title="You don't have permission to edit this issue.">Edit issue</a></li>
-          <li><a href="#">Watch issue</a></li>
-        </ul>
+      <div id="dropdown2-checkbox-radio-interactive" class="aui-dropdown2 aui-style-default">
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li><a class="aui-dropdown2-radio interactive checked">Option 1</a></li>
+            <li><a class="aui-dropdown2-radio interactive">Option 2</a></li>
+            <li><a class="aui-dropdown2-radio interactive">Option 3</a></li>
+          </ul>
+        </div>
+        <div class="aui-dropdown2-section">
+          <ul>
+            <li><a id="spellcheck" class="aui-dropdown2-checkbox interactive">Check spelling when typing</a></li>
+            <li><a class="aui-dropdown2-checkbox interactive checked disabled">Enable gravity</a></li>
+          </ul>
+        </div>
       </div>
     </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Dropdown menu groups/toolbars</h4>
+
+    <div class="aui-header">
+      <ul class="aui-nav aui-dropdown2-trigger-group">
+        <li><a href="#foo" class="aui-dropdown2-trigger">Foo</a></li>
+        <li><a href="#bar" class="aui-dropdown2-trigger">Bar</a></li>
+        <li><a href="#sin" class="aui-dropdown2-trigger">Sin</a></li>
+      </ul>
+    </div>
   </div>
 
 </section>

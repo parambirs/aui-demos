@@ -1,0 +1,268 @@
+---
+layout: components
+title: Forms
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+  Forms are used to collect user input and configure options of a task the user is completing.
+  </p>
+
+  <h3>Examples</h3>
+
+  <div class="aui-flatpack-example">
+    <form class="aui">
+      <div class="field-group">
+        <label for="comment-email">Email <span class="aui-icon icon-required">(required)</span></label>
+        <input class="text medium-field" type="text" id="comment-email"
+                name="comment-email" placeholder="you@example.com">
+        <div class="description">Your primary email address</div>
+      </div>
+      <div class="field-group">
+        <label for="comment-input">Comment</label>
+        <textarea class="textarea" name="comment-input" id="comment-input" placeholder="Your comment here..."></textarea>
+      </div>
+      <div class="buttons-container">
+        <div class="buttons">
+          <input class="button submit" type="submit" value="Save" id="comment-save-button">
+          <a class="cancel" href="#">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="aui-flatpack-example">
+    <h4>Text inputs</h4>
+    <p>
+      <form class="aui">
+        <div class="field-group">
+          <label for="text-input">Default field<span class="aui-icon icon-required">required</span></label>
+          <input class="text" type="text" id="text-input" name="text-input" title="Text input">
+          <div class="description">Default width input of a required field</div>
+        </div>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Textareas</h4>
+    <p>
+      <form class="aui">
+        <fieldset>
+          <legend><span>Leave a comment</span></legend>
+          <div class="field-group">
+            <label for="textarea-id">Comment</label>
+            <textarea class="textarea" name="comment" id="textarea-id" placeholder="Your comment here..."></textarea>
+          </div>
+        </fieldset>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Radio Buttons</h4>
+    <p>
+      <form class="aui">
+        <fieldset class="group">
+          <legend><span>Radio buttons</span></legend>
+          <div class="radio">
+            <input class="radio" type="radio" checked="checked"
+                name="radiobuttons" id="radioButtonOne">
+            <label for="radioButtonOne">Save as a blog post</label>
+          </div>
+          <div class="radio">
+            <input class="radio" type="radio"
+                name="radiobuttons" id="radioButtonTwo">
+            <label for="radioButtonTwo">Save as a page</label>
+          </div>
+          <div class="radio">
+            <input class="radio" type="radio"
+                name="radiobuttons" id="radioButtonThree">
+            <label for="radioButtonThree">Save to your drafts</label>
+          </div>
+        </fieldset>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Checkboxes</h4>
+    <p>
+      <form class="aui">
+        <fieldset class="group">
+          <legend><span>Description of the set of checkboxes</span></legend>
+          <div class="checkbox">
+            <input class="checkbox" type="checkbox" name="checkBoxOne" id="checkBoxOne">
+            <label for="checkBoxOne">Receive email</label>
+          </div>
+          <div class="checkbox">
+            <input class="checkbox" type="checkbox" name="checkBoxTwo" id="checkBoxTwo">
+            <label for="checkBoxTwo">Receive push notification</label>
+          </div>
+          <div class="checkbox">
+            <input class="checkbox" type="checkbox" name="checkBoxThree" id="checkBoxThree">
+            <label for="checkBoxThree">Receive in-app notification</label>
+          </div>
+        </fieldset>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Select</h4>
+    <p>
+      <form class="aui">
+        <div class="field-group">
+          <label for="select-example">Dropdown</label>
+          <select class="select" name="select-example" id="select-example">
+            <option>Select</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <optgroup label="Group 1">
+              <option>Option one</option>
+              <option>Option two</option>
+            </optgroup>
+            <option>Option 3</option>
+            <option>Option 4</option>
+          </select>
+        </div>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Multiselect</h4>
+    <p>
+      <form class="aui">
+        <div class="field-group">
+          <label for="multiselect">Multi select</label>
+          <select class="multi-select" size="4" multiple="multiple" name="multiselect" id="multiselect">
+            <option>Option one</option>
+            <option>Option two</option>
+            <option>Option three</option>
+            <option>Option four</option>
+            <option>Option five</option>
+            <option>Option six</option>
+          </select>
+        </div>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>File upload</h4>
+    <p>
+      <form class="aui">
+        <fieldset>
+          <legend><span>File upload</span></legend>
+          <div class="field-group">
+            <label for="file-upload-example">Upload file</label>
+            <input class="upfile" type="file" id="file-upload-example" name="file-upload-example">
+          </div>
+        </fieldset>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Disabled field</h4>
+    <p>
+      <form class="aui">
+        <div class="field-group">
+          <label for="disabled-field-id">Disabled field</label>
+          <input class="text" type="text" id="disabled-field-id" name="name-of-field" disabled>
+        </div>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Required field</h4>
+    <p>
+      <form class="aui">
+        <div class="field-group">
+          <label for="required-input">Field <span class="aui-icon icon-required">required</span></label>
+          <input class="text" type="text" id="required-input">
+        </div>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Error</h4>
+    <p>
+      <form class="aui">
+        <div class="field-group">
+          <label>Field</label>
+          <input class="text" type="text">
+          <div class="error">Error message here</div>
+        </div>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Description</h4>
+    <p>
+      <form class="aui">
+        <div class="field-group">
+          <label>Field</label>
+          <input class="text" type="text">
+          <div class="description">Some extra info that is nice to know but the
+              user can get by without it.</div>
+          <div class="error">Error message here</div>
+        </div>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Description</h4>
+    <p>
+      <form action="#" method="post" class="aui">
+        <label for="inline-help-example">First name<span class="aui-icon icon-required"></span></label>
+        <input class="text" type="text" id="inline-help-example" name="inline-help-example">
+        <span class="aui-icon icon-inline-help"><span>Help</span></span>
+        <span class="field-help hidden">This text will be toggled if the user clicks
+              the help icon.</span>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Form layout - top-label</h4>
+    <p>
+      <form class="aui top-label">
+        <fieldset class="top-label">
+          <div class="field-group top-label">
+            <label for="toplabelfieldexample">Search users</label>
+            <input class="text" type="text" id="toplabelfieldexample" name="toplabelfieldexample">
+          </div>
+        </fieldset>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Form layout - long-label</h4>
+    <p>
+      <form class="aui long-label">
+        <fieldset class="long-label">
+          <div class="field-group long-label">
+            <label for="longlabelfieldexample">Search users</label>
+            <input class="text" type="text" id="longlabelfieldexample" name="longlabelfieldexample">
+          </div>
+        </fieldset>
+      </form>
+    </p>
+  </div>
+
+</section>
+
+<script>
+AJS.$(document).ready(function() {
+  AJS.inlineHelp();
+});
+</script>
