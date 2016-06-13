@@ -1,0 +1,41 @@
+---
+layout: components
+title: Labels
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Labels are used to tag or label content with certain keywords; and optionally
+    to link to resources showing more information related to that keyword. Can be
+    closeable.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <ul>
+      <li><span id="unclickable-label" class="aui-label">Label text</span></li>
+      <li><a id="clickable-label" class="aui-label" href="#">Label link</a></li>
+      <li><span id="closeable-label-nourl" class="aui-label aui-label-closeable">
+            Removable label<span tabindex="0" class="aui-icon aui-icon-close"
+              original-title="(remove closableNoUrl)">(remove closableNoUrl)</span>
+          </span></li>
+      <li>
+        <span id="split-label" class="aui-label aui-label-closeable aui-label-split">
+          <a class="aui-label-split-main" href="#">Removable label link</a>
+          <span class="aui-label-split-close"><span tabindex="0" class="aui-icon aui-icon-close"
+            original-title="(remove splitLabel)">(remove splitLabel)</span></span>
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    AJS.whenIType('ze').execute(function() {
+      alert('You typed z then e.');
+    });
+    AJS.whenIType('gh').or('gd').goTo('http://google.com');
+  </script>
+
+</section>

@@ -1,0 +1,103 @@
+---
+layout: components
+title: Tables
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Tables are used to make large volumes of data easy to understand and to access.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <table class="aui">
+      <thead>
+        <tr>
+          <th id="basic-number">#</th>
+          <th id="basic-fname">First name</th>
+          <th id="basic-lname">Last name</th>
+          <th id="basic-username">Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td headers="basic-number">1</td>
+          <td headers="basic-fname">Matt</td>
+          <td headers="basic-lname">Bond</td>
+          <td headers="basic-username">mbond</td>
+        </tr>
+        <tr>
+          <td headers="basic-number">2</td>
+          <td headers="basic-fname">Ross</td>
+          <td headers="basic-lname">Chaldecott</td>
+          <td headers="basic-username">rchaldecott</td>
+        </tr>
+        <tr>
+          <td headers="basic-number">3</td>
+          <td headers="basic-fname">Henry</td>
+          <td headers="basic-lname">Tapia</td>
+          <td headers="basic-username">htapia</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <table class="aui">
+      <thead>
+        <tr>
+          <th id="name">Name</th>
+          <th id="type">Type</th>
+          <th id="order">Order</th>
+          <th id="action">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td headers="name">Default</td>
+          <td headers="type">Internal Directory</td>
+          <td class="order" headers="order">
+            <ul class="menu">
+              <li>
+                <a class="down" href="#">Down</a>
+              </li>
+            </ul>
+          </td>
+          <td class="action" headers="action">
+            <ul class="menu">
+              <li>
+                <a href="#">An Action</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td headers="name">Corporate LDAP</td>
+          <td headers="type">Microsoft Active Directory</td>
+          <td class="order" headers="order">
+            <ul class="menu">
+              <li>
+                <a class="up" href="#">Up</a>
+              </li>
+              <li>
+                <a class="down" href="#">Down</a>
+              </li>
+            </ul>
+          </td>
+          <td class="action" headers="action">
+            <ul class="menu">
+              <li>
+                <a href="#">An Action</a>
+              </li>
+              <li>
+                <a href="#">Another Action</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

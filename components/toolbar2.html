@@ -1,0 +1,68 @@
+---
+layout: components
+title: Toolbar 2
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p></p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <div class="aui-toolbar2">
+      <div class="aui-toolbar2-inner">
+        <div class="aui-toolbar2-primary">
+          <div id="button-set" class="aui-buttons">
+            <button class="aui-button aui-button-primary">Edit</button>
+          </div>
+          <div id="button-set1" class="aui-buttons">
+            <button class="aui-button">Assign</button>
+            <button class="aui-button">Assign to me</button>
+            <button class="aui-button">Comment</button>
+            <button class="aui-button aui-dropdown2-trigger" aria-owns="toolbardemo-dropdown2-more"
+                aria-haspopup="true" aria-controls="toolbardemo-dropdown2-more" data-container="#button-set1">More</button>
+          </div>
+        </div>
+        <div class="aui-toolbar2-secondary">
+          <div id="button-set2" class="aui-buttons">
+            <button class="aui-button aui-dropdown2-trigger" aria-owns="dropdown2-view"
+                aria-haspopup="true" aria-controls="dropdown2-view" data-container="#button-set2">
+              <span class="aui-icon aui-icon-small aui-iconfont-configure">More</span>
+            </button>
+          </div>
+        </div>
+      </div><!-- .aui-toolbar-inner -->
+    </div>
+
+    <div id="toolbardemo-dropdown2-more" class="aui-dropdown2 aui-style-default" data-dropdown2-alignment="left">
+      <div class="aui-dropdown2-section">
+        <ul class="aui-list-truncate">
+          <li><a href="#" class="active">Agile board</a></li>
+          <li><a href="#">Rank to top</a></li>
+          <li><a href="#">Rank to bottom</a></li>
+        </ul>
+      </div>
+      <div class="aui-dropdown2-section">
+        <ul class="aui-list-truncate">
+          <li><a href="#">Log work</a></li>
+        </ul>
+      </div>
+      <div class="aui-dropdown2-section">
+        <ul class="aui-list-truncate">
+          <li><a href="#">Attach files</a></li>
+          <li><a href="#">Attach screenshot</a></li>
+          <li><a href="#">Add/Edit UI mockup</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="dropdown2-view" class="aui-dropdown2 aui-style-default" data-dropdown2-alignment="right">
+      <ul class="aui-list-truncate">
+        <li><a href="#" class="active">XML</a></li>
+        <li><a href="#">Word</a></li>
+        <li><a href="#">Print version</a></li>
+      </ul>
+    </div>
+  </div>
+</section>

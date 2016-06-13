@@ -1,0 +1,104 @@
+---
+layout: components
+title: Sortable table
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Sortable table adds on to the core Tables component, allowing the table to be
+    sorted by the header row. Some custom sorting options are available.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <table id="delayedSortedTable" class="aui aui-table-sortable">
+      <thead>
+        <tr>
+          <th class="aui-table-column-issue-key">Issue key</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th class="aui-table-column-unsortable">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TEST-12</td>
+          <td>Cannot sort tables</td>
+          <td>2</td>
+          <td>Table sorting should be allowed</td>
+        </tr>
+        <tr>
+          <td>WIN-87</td>
+          <td>Issue Page doesn't load in IE</td>
+          <td>7</td>
+          <td>When loading issue page on IE it doesn't show</td>
+        </tr>
+        <tr>
+          <td>DRINK-7</td>
+          <td>Vending Machine is empty</td>
+          <td>1</td>
+          <td>Blocker</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <table class="aui">
+      <thead>
+        <tr>
+          <th id="name">Name</th>
+          <th id="type">Type</th>
+          <th id="order">Order</th>
+          <th id="action">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td headers="name">Default</td>
+          <td headers="type">Internal Directory</td>
+          <td class="order" headers="order">
+            <ul class="menu">
+              <li>
+                <a class="down" href="#">Down</a>
+              </li>
+            </ul>
+          </td>
+          <td class="action" headers="action">
+            <ul class="menu">
+              <li>
+                <a href="#">An Action</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td headers="name">Corporate LDAP</td>
+          <td headers="type">Microsoft Active Directory</td>
+          <td class="order" headers="order">
+            <ul class="menu">
+              <li>
+                <a class="up" href="#">Up</a>
+              </li>
+              <li>
+                <a class="down" href="#">Down</a>
+              </li>
+            </ul>
+          </td>
+          <td class="action" headers="action">
+            <ul class="menu">
+              <li>
+                <a href="#">An Action</a>
+              </li>
+              <li>
+                <a href="#">Another Action</a>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

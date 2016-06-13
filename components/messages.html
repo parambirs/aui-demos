@@ -1,0 +1,91 @@
+---
+layout: components
+title: Messages
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Messages are the primary method for providing system feedback in the product
+    user interface. Messages include notifications of various kinds: alerts,
+    confirmations, notices, warnings, info and errors.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <p>
+      <div class="aui-message">
+        <p class="title">
+          <strong>Backup stale</strong>
+        </p>
+        <p> This instance was last backed up on Thursday.</p>
+      </div>
+    </p>
+
+    <p>
+      <div class="aui-message aui-message-warning closeable">
+        <p class="title">
+          <strong>Backup stale</strong>
+        </p>
+        <p> This instance was last backed up on Thursday.</p>
+      </div>
+    </p>
+
+    <p>
+      <div class="aui-message aui-message-error">
+        <p class="title">
+          <strong>Backup stale</strong>
+        </p>
+        <p> This instance was last backed up on Thursday.</p>
+      </div>
+    </p>
+
+    <p>
+      <div class="aui-message aui-message-success">
+        <p class="title">
+          <strong>Backup stale</strong>
+        </p>
+        <p> This instance was last backed up on Thursday.</p>
+      </div>
+    </p>
+
+    <p>
+      <div class="aui-message aui-message-hint">
+        <p class="title">
+          <strong>Backup stale</strong>
+        </p>
+        <p> This instance was last backed up on Thursday.</p>
+      </div>
+    </p>
+
+  </div>
+  <div class="aui-flatpack-example">
+    <h4>Inserted with JS</h4>
+    <p>
+      <div id="aui-message-bar"></div>
+    </p>
+    <p>
+      <div id="custom-context"></div>
+    </p>
+
+    <script>
+      AJS.$(document).ready(function() {
+        AJS.messages.success({
+          title: 'Success!',
+          body: 'You have backed up your system!'
+        });
+
+        AJS.messages.generic("#custom-context", {
+          title: 'Custom Context Demo',
+          body: '<p>Because you often need to specify where the message goes.</p>',
+          fadeout: true
+        });
+
+        document.addEventListener('aui-message-close', function(e) {
+          AJS.log('Message id: ' + e.target.attr('id'));
+        });
+      });
+    </script>
+  </div>
+</section>

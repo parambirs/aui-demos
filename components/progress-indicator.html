@@ -1,0 +1,37 @@
+---
+layout: components
+title: Progress indicator
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Progress indicators inform users that a system process is currently taking
+    place that takes a predictable amount of time before it is finished.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <p>
+      <div id="docs-progress-bar" class="aui-progress-indicator">
+        <span class="aui-progress-indicator-value"></span>
+      </div>
+      <div class="aui-group">
+        <button id="toggle-progress-button" class="aui-button">Toggle</button>
+      </div>
+    </p>
+
+    <script>
+      AJS.$(function() {
+        AJS.$("#toggle-progress-button").click(function() {
+          if (AJS.$("#docs-progress-bar").attr("data-value")) {
+            AJS.progressBars.setIndeterminate("#docs-progress-bar");
+          } else {
+            AJS.progressBars.update("#docs-progress-bar", 0.75);
+          }
+        });
+      });
+    </script>
+  </div>
+</section>

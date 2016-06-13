@@ -1,0 +1,130 @@
+---
+layout: components
+title: Tabs
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    An optional component providing spin.js, a highly customisable javascript
+    spinner. Note that this is a separate component from the simple wait icon
+    included in AUI icons.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <div class="aui-tabs horizontal-tabs" id="tabs-example1" role="application">
+      <ul class="tabs-menu" role="tablist">
+        <li class="menu-item active-tab" role="presentation">
+          <a href="#tabs-example-first" id="aui-uid-0" role="tab" aria-selected="true">Designers</a>
+        </li>
+        <li class="menu-item" role="presentation">
+          <a href="#tabs-example-second" id="aui-uid-1" role="tab" aria-selected="false">Developers</a>
+        </li>
+        <li class="menu-item" role="presentation">
+          <a href="#tabs-example-third" id="aui-uid-2" role="tab" aria-selected="false">PMs</a>
+        </li>
+      </ul>
+      <div class="tabs-pane active-pane" id="tabs-example-first" role="tabpanel" aria-hidden="false" aria-labelledby="aui-uid-0">
+        <h3>Designers</h3>
+        <table class="aui">
+          <thead>
+              <tr>
+                  <th id="basic-number">#</th>
+                  <th id="basic-fname">First name</th>
+                  <th id="basic-lname">Last name</th>
+                  <th id="basic-username">Username</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td headers="basic-number">1</td>
+                  <td headers="basic-fname">Matt</td>
+                  <td headers="basic-lname">Bond</td>
+                  <td headers="basic-username">mbond</td>
+              </tr>
+              <tr>
+                  <td headers="basic-number">2</td>
+                  <td headers="basic-fname">Ross</td>
+                  <td headers="basic-lname">Chaldecott</td>
+                  <td headers="basic-username">rchaldecott</td>
+              </tr>
+              <tr>
+                  <td headers="basic-number">3</td>
+                  <td headers="basic-fname">Henry</td>
+                  <td headers="basic-lname">Tapia</td>
+                  <td headers="basic-username">htapia</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tabs-pane" id="tabs-example-second" role="tabpanel" aria-hidden="true" aria-labelledby="aui-uid-1">
+            <h3>Developers</h3>
+            <table class="aui">
+                <thead>
+                    <tr>
+                        <th id="basic-number">#</th>
+                        <th id="basic-fname">First name</th>
+                        <th id="basic-lname">Last name</th>
+                        <th id="basic-username">Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="basic-number">4</td>
+                        <td headers="basic-fname">Seb</td>
+                        <td headers="basic-lname">Ruiz</td>
+                        <td headers="basic-username">sruiz</td>
+                    </tr>
+                    <tr>
+                        <td headers="basic-number">7</td>
+                        <td headers="basic-fname">Sean</td>
+                        <td headers="basic-lname">Curtis</td>
+                        <td headers="basic-username">scurtis</td>
+                    </tr>
+                    <tr>
+                        <td headers="basic-number">8</td>
+                        <td headers="basic-fname">Matthew</td>
+                        <td headers="basic-lname">Watson</td>
+                        <td headers="basic-username">mwatson</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tabs-pane" id="tabs-example-third" role="tabpanel" aria-hidden="true" aria-labelledby="aui-uid-2">
+            <h3>Product management</h3>
+            <table class="aui">
+                <thead>
+                    <tr>
+                        <th id="basic-number">#</th>
+                        <th id="basic-fname">First name</th>
+                        <th id="basic-lname">Last name</th>
+                        <th id="basic-username">Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="basic-number">5</td>
+                        <td headers="basic-fname">Jens</td>
+                        <td headers="basic-lname">Schumacher</td>
+                        <td headers="basic-username">jschumacher</td>
+                    </tr>
+                    <tr>
+                        <td headers="basic-number">6</td>
+                        <td headers="basic-fname">Sten</td>
+                        <td headers="basic-lname">Pittet</td>
+                        <td headers="basic-username">spittet</td>
+                    </tr>
+                    <tr>
+                        <td headers="basic-number">9</td>
+                        <td headers="basic-fname">James</td>
+                        <td headers="basic-lname">Dumay</td>
+                        <td headers="basic-username">jdumay</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</section>

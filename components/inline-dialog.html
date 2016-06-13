@@ -1,0 +1,77 @@
+---
+layout: components
+title: Inline Dialog
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    A container for secondary content/controls to be displayed on user request.
+    Consider this component as displayed in context to the triggering control
+    with the dialog overlaying the page content.
+
+    An inline dialog should be preferred over a modal dialog when a connection
+    between the action has a clear benefit versus having a lower user focus.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+      <a data-aui-trigger aria-controls="more-details" href="#more-details" >
+        Inline dialog trigger
+      </a>
+
+      <aui-inline-dialog id="more-details">
+        <p>Lorem ipsum.</p>
+      </aui-inline-dialog>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <a data-aui-trigger aria-controls="start-open" href="#start-open" >
+      This inline dialog starts open
+    </a>
+
+    <aui-inline-dialog id="start-open" open>
+      <p>Lorem ipsum.</p>
+      <a class="aui-button aui-button-link">Close</a>
+    </aui-inline-dialog>
+    <script>
+      AJS.$(function() {
+        var inlineDialog = document.getElementById('start-open');
+        inlineDialog.persistent = true;
+        inlineDialog.querySelector('.aui-button').addEventListener('click', function(e) {
+          inlineDialog.open = false;
+        });
+      });
+    </script>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <a data-aui-trigger aria-controls="show-on-hover" href="#show-on-hover" >
+      Hover to show contents
+    </a>
+
+    <aui-inline-dialog id="show-on-hover" responds-to="hover">
+      <p>Lorem ipsum.</p>
+    </aui-inline-dialog>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <a data-aui-trigger aria-controls="stays-open" href="#stays-open" >
+      This inline dialog stays open
+    </a>
+
+    <aui-inline-dialog id="stays-open" persistent>
+      <p>Lorem ipsum.</p>
+      <a class="aui-button aui-button-link">Close</a>
+    </aui-inline-dialog>
+    <script>
+      AJS.$(function() {
+        var inlineDialog2 = document.getElementById('stays-open');
+        inlineDialog2.querySelector('.aui-button').addEventListener('click', function(e) {
+          inlineDialog2.open = false;
+        });
+      });
+    </script>
+  </div>
+</section>

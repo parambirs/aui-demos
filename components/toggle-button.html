@@ -1,0 +1,84 @@
+---
+layout: components
+title: Toggle Button
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    A toggle button provides a quick way to see whether a given option is enabled
+    or disabled and to toggle between these states. Place a toggle button to the
+    right of a label, in a table, or below a section describing what is enabled
+    or disabled.<br>
+    A toggle button should be used if the main intent is to make a binary choice,
+    such as turning something on or off, and the choice is not part of a form.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <form class="aui">
+      <div class="field-group">
+        <aui-label for="gzip-compression">Use gzip compression</aui-label>
+        <aui-toggle id="gzip-compression" label="Use gzip compression"></aui-toggle>
+      </div>
+      <div class="field-group">
+        <aui-label for="outgoing-email">Send outgoing email</aui-label>
+        <aui-toggle id="outgoing-email" label="Send outgoing email" checked
+            tooltip-on="Enabled" tooltip-off="Disabled"></aui-toggle>
+      </div>
+      <div class="field-group">
+        <aui-label for="email-visibility">User email visibility</aui-label>
+        <aui-toggle id="email-visibility" label="User email visibility" disabled
+            tooltip-on="Public" tooltip-off="Hidden"></aui-toggle>
+      </div>
+      <div class="field-group">
+        <aui-label for="email-confirm">Email confirmation</aui-label>
+        <aui-toggle id="email-confirm" label="Email confirmation" checked disabled
+            tooltip-on="Email confirmation is currently enabled. You need to have admin permission to turn it off.">
+        </aui-toggle>
+      </div>
+    </form>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Async button</h4>
+    <form class="aui">
+      <div class="field-group">
+        <aui-label for="wifi-toggle">WiFi</aui-label>
+        <aui-toggle id="wifi-toggle" label="Wifi toggle"></aui-toggle>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    var toggle = document.getElementById('wifi-toggle');
+    toggle.addEventListener('change', function(e) {
+      var isChecked = toggle.checked;  // new value of toggle
+      toggle.busy = true;
+      $.post('set/my/variable', { value: isChecked })
+        .done(function() {
+          console.log('success');
+        })
+        .fail(function() {
+          toggle.checked = !isChecked;
+          console.error('display an error message');
+        })
+        .always(function() {
+          toggle.busy = false;
+        });
+    });
+
+    // create fake server response
+    var url = "set/my/variable";
+    var server = sinon.fakeServer.create();
+    server.autoRespond = true;
+    server.autoRespondAfter = 2000;
+
+    server.respondWith('POST', url, [
+      200,
+      { 'Content-Type': 'application/json' },
+      ''
+    ]);
+  </script>
+</section>

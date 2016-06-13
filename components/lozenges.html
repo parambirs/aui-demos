@@ -1,0 +1,41 @@
+---
+layout: components
+title: Lozenges
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Coloured text lozenge, primarily for displaying status. Available in standard
+    and subtle variations.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <p>
+      <span class="aui-lozenge">default</span>
+      <span class="aui-lozenge aui-lozenge-success">success</span>
+      <span class="aui-lozenge aui-lozenge-error">error</span>
+      <span class="aui-lozenge aui-lozenge-current">current</span>
+      <span class="aui-lozenge aui-lozenge-new">new</span>
+      <span class="aui-lozenge aui-lozenge-moved">moved</span>
+    </p>
+    <p>
+      <span class="aui-lozenge aui-lozenge-subtle">default</span>
+      <span class="aui-lozenge aui-lozenge-subtle aui-lozenge-success">success</span>
+      <span class="aui-lozenge aui-lozenge-subtle aui-lozenge-error">error</span>
+      <span class="aui-lozenge aui-lozenge-subtle aui-lozenge-current">current</span>
+      <span class="aui-lozenge aui-lozenge-subtle aui-lozenge-new">new</span>
+      <span class="aui-lozenge aui-lozenge-subtle aui-lozenge-moved">moved</span>
+    </p>
+  </div>
+
+  <script>
+    AJS.whenIType('ze').execute(function() {
+      alert('You typed z then e.');
+    });
+    AJS.whenIType('gh').or('gd').goTo('http://google.com');
+  </script>
+
+</section>

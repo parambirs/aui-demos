@@ -1,0 +1,37 @@
+---
+layout: components
+title: Sortable table
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    An optional component providing spin.js, a highly customisable javascript
+    spinner. Note that this is a separate component from the simple wait icon
+    included in AUI icons.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <button class="aui-button" id="spinner-trigger">Do something</button>
+    <div class="button-spinner"></div>
+  </div>
+
+  <script>
+    AJS.$(function() {
+      var spinning = false;
+      AJS.$('#spinner-trigger').on('click', function() {
+        if (!spinning) {
+          AJS.$(this).text('Stop spinning!');
+          AJS.$('.button-spinner').spin();
+          spinning = true;
+        } else {
+          AJS.$(this).text('Do something');
+          AJS.$('.button-spinner').spinStop();
+          spinning = false;
+        }
+      });
+    });
+  </script>
+</section>

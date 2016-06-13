@@ -1,0 +1,58 @@
+---
+layout: components
+title: Single select
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Renders a type-ahead where the user can select only one option. The suggestions
+    will match what the user types in the input field.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <h4>Synchronous (HTML):</h4>
+    <p>
+      <form class="aui">
+        <aui-label for="sync-product-single-select">Choose your product synchronously:</aui-label>
+        <p>
+          <aui-select id="sync-product-single-select" name="product" placeholder="Select a product">
+            <aui-option>HipChat</aui-option>
+            <aui-option>JIRA</aui-option>
+            <aui-option>Confluence</aui-option>
+            <aui-option>Stash</aui-option>
+            <aui-option>Fecru</aui-option>
+          </aui-select>
+        </p>
+      </form>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Asynchronous (HTML):</h4>
+    <p>
+      <form class="aui">
+        <aui-label for="async-product-single-select">Choose your product
+            asynchronously (you need to type to initiate a search):</aui-label>
+        <p>
+          <aui-select id="async-product-single-select" name="product" placeholder="Select a product"
+                src="products" value="type to trigger async"></aui-select>
+        </p>
+      </form>
+    </p>
+    <script>
+      AJS.$(function() {
+        var server = sinon.fakeServer.create();
+        server.autoRespond = true;
+        server.autoRespondAfter = 1000;
+        server.respondWith(/products/, [
+          200,
+          { 'Content-Type': 'application/json' },
+          '[{ "label": "HipChat" }, { "label": "JIRA" }, { "label": "Confluence", "value": "CONF" }, { "label": "Stash", "value": "STASH" }, { "label": "FeCru", "value": "FEC" }]'
+        ]);
+      });
+    </script>
+  </div>
+</section>

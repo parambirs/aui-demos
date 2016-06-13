@@ -1,0 +1,25 @@
+---
+layout: components
+title: Keyboard shortcuts
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    Keyboard commands with syntactic sugar.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <p>Type "z" then "e" to execute some simple JavaScript.</p>
+  </div>
+
+  <script>
+    AJS.whenIType('ze').execute(function() {
+      alert('You typed z then e.');
+    });
+    AJS.whenIType('gh').or('gd').goTo('http://google.com');
+  </script>
+
+</section>

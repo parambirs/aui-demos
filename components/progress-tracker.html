@@ -1,0 +1,63 @@
+---
+layout: components
+title: Progress tracker
+---
+
+<section class="aui-page-panel-content">
+  <h2>Summary</h2>
+  <p>
+    A progress tracker guides users through a number of steps across multiple
+    screens in order to complete a task flow. It shows users where they are in
+    the process, and also offers navigation within the process.
+  </p>
+
+  <h3>Example</h3>
+
+  <div class="aui-flatpack-example">
+    <h4>Default:</h4>
+    <p>
+      <ol class="aui-progress-tracker">
+        <li class="aui-progress-tracker-step" style="width: 25%">
+          <span>Configure instance</span>
+        </li>
+        <li class="aui-progress-tracker-step aui-progress-tracker-step-current" style="width: 25%">
+          <span>Select plugins</span>
+        </li>
+        <li class="aui-progress-tracker-step" style="width: 25%">
+          <span>Invite users</span>
+        </li>
+        <li class="aui-progress-tracker-step" style="width: 25%">
+          <span>Confirm</span>
+        </li>
+      </ol>
+    </p>
+  </div>
+
+  <div class="aui-flatpack-example">
+    <h4>Inverted:</h4>
+    <p>
+      <div class="inverted-progress-tracker-example">
+        <ol class="aui-progress-tracker aui-progress-tracker-inverted">
+          <li class="aui-progress-tracker-step" style="width: 25%">
+            <span>Configure instance</span>
+          </li>
+          <li class="aui-progress-tracker-step aui-progress-tracker-step-current" style="width: 25%">
+            <span>Select plugins</span>
+          </li>
+          <li class="aui-progress-tracker-step" style="width: 25%">
+            <span>Invite users</span>
+          </li>
+          <li class="aui-progress-tracker-step" style="width: 25%">
+            <span>Confirm</span>
+          </li>
+        </ol>
+      </div>
+    </p>
+    <style>
+      .inverted-progress-tracker-example {
+        background: #F5F5F5;
+        padding: 10px 0;
+      }
+    </style>
+  </div>
+</section>
